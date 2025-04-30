@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { cn } from '@/lib/utils';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,12 +25,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', target: 'hero' },
-    { name: 'About', target: 'about' },
-    { name: 'Services', target: 'services' },
-    { name: 'Clients', target: 'social-proof' },
-    { name: 'Speaking', target: 'speaking' },
-    { name: 'Contact', target: 'contact' },
+    { name: 'Home', target: 'hero', isRouter: false },
+    { name: 'About', target: '/about', isRouter: true },
+    { name: 'Services', target: 'services', isRouter: false }
   ];
 
   return (
@@ -37,7 +35,7 @@ const Navigation = () => {
       className={cn(
         'fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300',
         scrolled 
-          ? 'py-3 bg-white bg-opacity-90 backdrop-blur-sm shadow-md' 
+          ? 'py-3 bg-chemist-black bg-opacity-90 backdrop-blur-sm shadow-md' 
           : 'py-5 bg-transparent'
       )}
     >
@@ -53,28 +51,38 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.target}
-              spy={true}
-              smooth={true}
-              duration={800}
-              className="nav-item font-medium"
-            >
-              {item.name}
-            </Link>
+            item.isRouter ? (
+              <RouterLink
+                key={item.name}
+                to={item.target}
+                className="nav-item font-medium text-white hover:text-chemist-orange"
+              >
+                {item.name}
+              </RouterLink>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.target}
+                spy={true}
+                smooth={true}
+                duration={800}
+                className="nav-item font-medium text-white hover:text-chemist-orange"
+              >
+                {item.name}
+              </Link>
+            )
           ))}
           <a
             href="#contact"
             className="btn-primary"
           >
-            Book Kent
+            Let's Work
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-chemist-black focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -91,27 +99,38 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-chemist-black shadow-md py-4 px-6 animate-fade-in">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.target}
-                spy={true}
-                smooth={true}
-                duration={800}
-                className="nav-item font-medium"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+              item.isRouter ? (
+                <RouterLink
+                  key={item.name}
+                  to={item.target}
+                  className="nav-item font-medium text-white hover:text-chemist-orange"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </RouterLink>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.target}
+                  spy={true}
+                  smooth={true}
+                  duration={800}
+                  className="nav-item font-medium text-white hover:text-chemist-orange"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             <a
               href="#contact"
               className="btn-primary text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Book Kent
+              Let's Work
             </a>
           </div>
         </div>

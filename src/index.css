@@ -94,11 +94,11 @@
   }
   
   .btn-primary {
-    @apply bg-chemist-orange text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-opacity-90 hover:scale-[1.02] duration-300;
+    @apply bg-chemist-orange text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-opacity-90 hover:scale-[1.02] duration-300 inline-block text-center;
   }
   
   .btn-secondary {
-    @apply bg-chemist-black text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-chemist-darkgray hover:scale-[1.02] duration-300;
+    @apply bg-chemist-black text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-chemist-darkgray hover:scale-[1.02] duration-300 inline-block text-center border border-chemist-orange;
   }
   
   .nav-item {
@@ -106,15 +106,15 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-chemist-black;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl text-chemist-darkgray mb-8 max-w-2xl;
+    @apply text-xl md:text-2xl mb-8 max-w-2xl;
   }
   
   .card-service {
-    @apply bg-chemist-white p-8 rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-[1.02];
+    @apply p-8 rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-[1.02] border border-chemist-orange border-opacity-50;
   }
   
   .service-icon {
@@ -126,7 +126,7 @@
   }
   
   .hero-subtitle {
-    @apply text-lg md:text-xl lg:text-2xl text-chemist-gray mt-4 mb-8 max-w-xl;
+    @apply text-lg md:text-xl lg:text-2xl mt-4 mb-8 max-w-xl;
   }
 
   .scroll-indicator {
@@ -146,15 +146,15 @@
   }
   
   .timeline-dot {
-    @apply absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-chemist-orange border-4 border-white;
+    @apply absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-chemist-orange border-4 border-chemist-black;
   }
   
   .timeline-date {
-    @apply text-chemist-gray font-medium;
+    @apply text-gray-400 font-medium;
   }
   
   .testimonial-card {
-    @apply bg-white p-6 rounded-lg shadow-lg;
+    @apply bg-chemist-darkgray p-6 rounded-lg shadow-lg;
   }
   
   .parallax-bg {
@@ -164,10 +164,46 @@
   .lab-icon {
     @apply text-chemist-orange;
   }
+  
+  .glass-effect {
+    @apply bg-chemist-black bg-opacity-70 backdrop-blur-md;
+  }
 }
 
 /* Scroll Snap Container */
 .snap-container {
   @apply h-screen overflow-y-scroll snap-y snap-mandatory;
   scroll-behavior: smooth;
+}
+
+/* Atom Effect */
+.atom-orbit {
+  @apply absolute rounded-full border border-chemist-orange opacity-30;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Electric Pulse Effect */
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.electric-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Helix Animation */
+@keyframes helix-spin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+.helix-animation {
+  animation: helix-spin 15s linear infinite;
 }

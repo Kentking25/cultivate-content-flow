@@ -1,8 +1,9 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Beaker, Atom, TestTube } from 'lucide-react';
+import { Atom, Helix, TestTube } from 'lucide-react';
 import { FormulaDiagram } from '../ChemistryElements';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -11,7 +12,7 @@ const AboutSection = () => {
   });
 
   return (
-    <section id="about" className="section bg-chemist-white relative" ref={ref}>
+    <section id="about" className="section bg-gradient-to-b from-chemist-black to-chemist-darkgray text-white relative" ref={ref}>
       <div className="container-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -19,16 +20,16 @@ const AboutSection = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="order-2 lg:order-1"
         >
-          <h2 className="section-title">
+          <h2 className="section-title text-white">
             Meet Kent King,<br />
             <span className="text-chemist-orange">The Content Chemist</span>
           </h2>
           
-          <p className="text-lg text-chemist-darkgray mb-6">
+          <p className="text-lg text-gray-300 mb-6">
             Award-winning content strategist, personal brand coach, and founder of SOS Club & Element The Agency.
           </p>
           
-          <div className="space-y-6 text-chemist-gray">
+          <div className="space-y-6 text-gray-300">
             <p>
               From child actor to DJ to content marketing mastermind, Kent brings a unique perspective to personal branding strategy that blends platform science with fearless creativity.
             </p>
@@ -41,7 +42,7 @@ const AboutSection = () => {
           </div>
           
           <div className="mt-8">
-            <a href="#contact" className="btn-primary">Book Kent</a>
+            <Link to="/about" className="btn-primary">Learn More</Link>
           </div>
         </motion.div>
         
@@ -61,15 +62,15 @@ const AboutSection = () => {
             </div>
             
             <div className="absolute -top-5 -right-5 bg-chemist-orange rounded-full p-3 shadow-lg">
-              <Beaker className="h-8 w-8 text-white" />
+              <Atom className="h-8 w-8 text-chemist-black" />
             </div>
             
             <div className="absolute -bottom-3 -left-3 bg-chemist-black rounded-full p-3 shadow-lg">
-              <TestTube className="h-8 w-8 text-white" />
+              <TestTube className="h-8 w-8 text-chemist-orange" />
             </div>
             
-            <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-chemist-white rounded-full p-3 shadow-lg border-2 border-chemist-orange">
-              <Atom className="h-8 w-8 text-chemist-orange" />
+            <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-chemist-darkgray rounded-full p-3 shadow-lg border-2 border-chemist-orange">
+              <Helix className="h-8 w-8 text-chemist-orange" />
             </div>
           </div>
         </motion.div>

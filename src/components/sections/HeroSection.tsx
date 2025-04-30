@@ -11,7 +11,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section id="hero" className="section bg-chemist-white relative overflow-hidden" ref={ref}>
+    <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
       {/* Animated bubbles background */}
       <Bubble size={100} delay={0} top="20%" left="10%" />
       <Bubble size={60} delay={0.5} top="60%" left="5%" />
@@ -30,12 +30,12 @@ const HeroSection = () => {
             <FloatingBeaker className="relative" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-chemist-black">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white">
             The <span className="text-chemist-orange">Content Chemist</span>
           </h1>
           
           <motion.p 
-            className="hero-subtitle mx-auto"
+            className="hero-subtitle mx-auto text-gray-300"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -50,7 +50,7 @@ const HeroSection = () => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <a href="#contact" className="btn-primary">Book Kent</a>
+            <a href="#contact" className="btn-primary">Let's Work</a>
             <a href="#sos-club" className="btn-secondary">Join SOS Club</a>
           </motion.div>
         </motion.div>

@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FlaskConical, TestTube, Beaker, Atom } from 'lucide-react';
+import { FlaskConical, TestTube, Beaker, Atom, Helix } from 'lucide-react';
 
 export const Bubble = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
@@ -34,7 +34,7 @@ export const FloatingBeaker = ({ className }: { className?: string }) => {
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
     >
-      <Beaker className="text-chemist-orange h-12 w-12 md:h-16 md:w-16" />
+      <Atom className="text-chemist-orange h-12 w-12 md:h-16 md:w-16" />
     </motion.div>
   );
 };
@@ -47,19 +47,7 @@ export const AnimatedFlask = ({ className }: { className?: string }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <FlaskConical className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
-      <motion.div
-        className="absolute bottom-1/4 left-1/4 right-1/4 bg-chemist-orange bg-opacity-30 rounded-b-full"
-        style={{ height: '40%' }}
-        animate={{
-          height: ['40%', '60%', '40%'],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <Helix className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
     </motion.div>
   );
 };
@@ -74,7 +62,7 @@ export const LabBackground = () => {
         <Beaker size={100} />
       </div>
       <div className="absolute top-[70%] left-[15%]">
-        <FlaskConical size={90} />
+        <Helix size={90} />
       </div>
       <div className="absolute top-[60%] left-[80%]">
         <Atom size={120} />
@@ -94,23 +82,23 @@ export const FormulaDiagram = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <div className="border-2 border-chemist-orange rounded-lg p-6">
+      <div className="border-2 border-chemist-orange rounded-lg p-6 bg-chemist-black bg-opacity-90 text-white">
         <div className="grid grid-cols-3 gap-4">
           <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-silver p-4">
-              <Beaker className="text-chemist-black h-8 w-8" />
+            <div className="rounded-full bg-chemist-darkgray p-4">
+              <Atom className="text-chemist-orange h-8 w-8" />
             </div>
             <p className="mt-2 font-medium">Platform Science</p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-silver p-4">
-              <TestTube className="text-chemist-black h-8 w-8" />
+            <div className="rounded-full bg-chemist-darkgray p-4">
+              <TestTube className="text-chemist-orange h-8 w-8" />
             </div>
             <p className="mt-2 font-medium">Behavioral Psychology</p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-silver p-4">
-              <Atom className="text-chemist-black h-8 w-8" />
+            <div className="rounded-full bg-chemist-darkgray p-4">
+              <Helix className="text-chemist-orange h-8 w-8" />
             </div>
             <p className="mt-2 font-medium">Fearless Creativity</p>
           </div>
