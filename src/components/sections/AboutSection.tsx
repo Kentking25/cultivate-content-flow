@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Atom, Helix, TestTube } from 'lucide-react';
+import { Atom, TestTube, FlaskConical } from 'lucide-react';
 import { FormulaDiagram } from '../ChemistryElements';
 import { Link } from 'react-router-dom';
 
@@ -70,7 +70,7 @@ const AboutSection = () => {
             </div>
             
             <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-chemist-darkgray rounded-full p-3 shadow-lg border-2 border-chemist-orange">
-              <Helix className="h-8 w-8 text-chemist-orange" />
+              <FlaskConical className="h-8 w-8 text-chemist-orange" />
             </div>
           </div>
         </motion.div>

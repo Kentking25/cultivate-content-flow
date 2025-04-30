@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
 import Footer from '../components/Footer';
 import { FormulaDiagram } from '../components/ChemistryElements';
-import { Atom, Helix, TestTube } from 'lucide-react';
+import { Atom, FlaskConical, TestTube } from 'lucide-react';
 
 const SpeakingSection = () => {
   const [ref, inView] = useInView({
@@ -162,7 +162,7 @@ const FullBioSection = () => {
               </div>
               
               <div className="absolute top-1/3 -left-8 transform -translate-y-1/2 bg-chemist-darkgray rounded-full p-3 shadow-lg border-2 border-chemist-orange">
-                <Helix className="h-8 w-8 text-chemist-orange" />
+                <FlaskConical className="h-8 w-8 text-chemist-orange" />
               </div>
             </div>
             

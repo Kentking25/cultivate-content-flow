@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FlaskConical, TestTube, Beaker, Atom, Helix } from 'lucide-react';
+import { FlaskConical, TestTube, Beaker, Atom } from 'lucide-react';
 
 export const Bubble = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
@@ -47,7 +47,7 @@ export const AnimatedFlask = ({ className }: { className?: string }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <Helix className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
+      <FlaskConical className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
     </motion.div>
   );
 };
@@ -62,7 +62,7 @@ export const LabBackground = () => {
         <Beaker size={100} />
       </div>
       <div className="absolute top-[70%] left-[15%]">
-        <Helix size={90} />
+        <FlaskConical size={90} />
       </div>
       <div className="absolute top-[60%] left-[80%]">
         <Atom size={120} />
@@ -98,7 +98,7 @@ export const FormulaDiagram = () => {
           </div>
           <div className="flex flex-col items-center text-center">
             <div className="rounded-full bg-chemist-darkgray p-4">
-              <Helix className="text-chemist-orange h-8 w-8" />
+              <FlaskConical className="text-chemist-orange h-8 w-8" />
             </div>
             <p className="mt-2 font-medium">Fearless Creativity</p>
           </div>
