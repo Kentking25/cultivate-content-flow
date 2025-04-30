@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Beaker, Flask, TestTube } from 'lucide-react';
+import { Beaker, FlaskConical, TestTube } from 'lucide-react';
 
 const ServiceCard = ({ 
   title, 
@@ -75,7 +75,7 @@ const ServicesSection = () => {
           <ServiceCard
             title="SOS Club"
             description="Join our Content Growth Lab (Free) or upgrade to Success On Social (Paid) for community support and proven content strategies."
-            icon={() => <Flask className="h-10 w-10 text-chemist-orange" />}
+            icon={() => <FlaskConical className="h-10 w-10 text-chemist-orange" />}
             buttonText="Join Now"
             buttonLink="#sos-club"
             delay={0.2}

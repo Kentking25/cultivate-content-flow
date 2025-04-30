@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Flask, Beaker, TestTube } from 'lucide-react';
+import { FlaskConical, Beaker, TestTube } from 'lucide-react';
 
 const services = [
   {
@@ -11,7 +11,7 @@ const services = [
     description: "Deep-dive analysis to understand your ideal audience's needs, pain points, and content preferences."
   },
   {
-    icon: Flask,
+    icon: FlaskConical,
     title: "Brand Positioning & Messaging",
     description: "Craft a unique position in your market with messaging that resonates and differentiates."
   },
@@ -31,7 +31,7 @@ const services = [
     description: "Develop authentic presence and confidence in front of the camera."
   },
   {
-    icon: Flask,
+    icon: FlaskConical,
     title: "Video Editing",
     description: "Professional editing that enhances your message and matches your brand style."
   },
@@ -46,7 +46,7 @@ const services = [
     description: "Strategic digital experiences designed to guide visitors toward conversion."
   },
   {
-    icon: Flask,
+    icon: FlaskConical,
     title: "Email & SMS Flows",
     description: "Automated sequences that nurture leads and drive consistent sales."
   },

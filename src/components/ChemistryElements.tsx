@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Flask, TestTube, Beaker, Atom } from 'lucide-react';
+import { FlaskConical, TestTube, Beaker, Atom } from 'lucide-react';
 
 export const Bubble = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
@@ -47,7 +47,7 @@ export const AnimatedFlask = ({ className }: { className?: string }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <Flask className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
+      <FlaskConical className="text-chemist-orange h-10 w-10 md:h-14 md:w-14" />
       <motion.div
         className="absolute bottom-1/4 left-1/4 right-1/4 bg-chemist-orange bg-opacity-30 rounded-b-full"
         style={{ height: '40%' }}
@@ -74,7 +74,7 @@ export const LabBackground = () => {
         <Beaker size={100} />
       </div>
       <div className="absolute top-[70%] left-[15%]">
-        <Flask size={90} />
+        <FlaskConical size={90} />
       </div>
       <div className="absolute top-[60%] left-[80%]">
         <Atom size={120} />
