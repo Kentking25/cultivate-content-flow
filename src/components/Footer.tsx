@@ -1,6 +1,8 @@
 
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [ref, inView] = useInView({
@@ -9,11 +11,10 @@ const Footer = () => {
   });
 
   const socialLinks = [
-    { name: 'Twitter', url: 'https://twitter.com/kentcultivate' },
-    { name: 'Instagram', url: 'https://instagram.com/kentcultivate' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/kentcultivate' },
-    { name: 'YouTube', url: 'https://youtube.com/@kentcultivate' },
-    { name: 'TikTok', url: 'https://tiktok.com/@kentcultivate' },
+    { name: 'Twitter', url: 'https://x.com/kentcultivate', icon: Twitter },
+    { name: 'Instagram', url: 'https://instagram.com/kentcultivate', icon: Instagram },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/kent-king-64164b1b9', icon: Linkedin },
+    { name: 'YouTube', url: 'https://youtube.com/@kentcultivate', icon: Youtube },
   ];
 
   return (
@@ -29,7 +30,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/4479fb21-0d03-4e7f-9d64-7679a32f6f93.png" 
+                src="/lovable-uploads/23d3a082-21ba-4964-94c6-d58b0f191609.png" 
                 alt="Kent King - Content Chemist Logo" 
                 className="h-12"
               />
@@ -44,34 +45,47 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Kent</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#speaking" className="text-gray-400 hover:text-white transition-colors">Speaking</a></li>
-              <li><a href="#sos-club" className="text-gray-400 hover:text-white transition-colors">SOS Club</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Kent</Link></li>
+              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><Link to="/about#speaking" className="text-gray-400 hover:text-white transition-colors">Speaking</Link></li>
+              <li><a href="/#sos-club" className="text-gray-400 hover:text-white transition-colors">SOS Club</a></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           
           {/* Connect */}
           <div>
             <h3 className="font-bold text-lg mb-4">Connect</h3>
-            <ul className="space-y-2">
+            <div className="flex space-x-4 mb-6">
               {socialLinks.map((link) => (
-                <li key={link.name}>
-                  <a 
-                    href={link.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
+                <a 
+                  key={link.name}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  title={link.name}
+                >
+                  <link.icon className="h-6 w-6" />
+                </a>
               ))}
-            </ul>
-            <div className="mt-6">
               <a 
-                href="https://elementmarketing.com" 
+                href="https://tiktok.com/@kentcultivate" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                title="TikTok"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-music">
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+              </a>
+            </div>
+            <div>
+              <a 
+                href="https://elementtheagency.hbportal.co/public/674cde7cf3636d002dbc1d37" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-chemist-orange hover:text-white transition-colors"

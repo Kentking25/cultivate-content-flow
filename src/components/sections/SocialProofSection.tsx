@@ -24,12 +24,12 @@ const testimonials = [
 ];
 
 const brands = [
-  { name: "Windows", logo: "https://placehold.co/200x100/F4F4F4/666666?text=Windows" },
-  { name: "Printify", logo: "https://placehold.co/200x100/F4F4F4/666666?text=Printify" },
-  { name: "CRWN Magazine", logo: "https://placehold.co/200x100/F4F4F4/666666?text=CRWN+Magazine" },
-  { name: "Sprite", logo: "https://placehold.co/200x100/F4F4F4/666666?text=Sprite" },
-  { name: "Reebok", logo: "https://placehold.co/200x100/F4F4F4/666666?text=Reebok" },
-  { name: "Paramount Pictures", logo: "https://placehold.co/200x100/F4F4F4/666666?text=Paramount" },
+  { name: "Microsoft", logo: "/lovable-uploads/cf30c19d-eb47-438c-a733-1160acf625c0.png" },
+  { name: "Printify", logo: "/lovable-uploads/d4da68f5-b274-4296-8abd-765b80c8a91f.png" },
+  { name: "CRWN Magazine", logo: "/lovable-uploads/c87e7451-9958-4a59-b548-9c1a481cafb5.png" },
+  { name: "Skillz", logo: "/lovable-uploads/3144905c-f635-48a4-b66b-82f69e445231.png" },
+  { name: "Trap Karaoke", logo: "/lovable-uploads/11e52c89-f33d-4f93-bf03-713db7edb4d7.png" },
+  { name: "Zeffy", logo: "/lovable-uploads/2eb8b4f6-d9ce-4ca6-8ae3-7d9505b1eb91.png" },
 ];
 
 const SocialProofSection = () => {
@@ -60,11 +60,12 @@ const SocialProofSection = () => {
                   initial={{ opacity: 0 }}
                   animate={inView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="h-16 md:h-20 flex items-center"
                 >
                   <img 
                     src={brand.logo} 
                     alt={`${brand.name} logo`} 
-                    className="client-logo"
+                    className="max-h-full max-w-[150px] md:max-w-[180px] object-contain client-logo"
                   />
                 </motion.div>
               ))}

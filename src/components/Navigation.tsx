@@ -25,9 +25,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', target: 'hero', isRouter: false },
+    { name: 'Home', target: 'hero', isRouter: false, path: '' },
     { name: 'About', target: '/about', isRouter: true },
-    { name: 'Services', target: 'services', isRouter: false }
+    { name: 'Services', target: 'services', isRouter: false, path: '' }
   ];
 
   return (
@@ -41,11 +41,13 @@ const Navigation = () => {
     >
       <div className="container-content flex justify-between items-center">
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/4479fb21-0d03-4e7f-9d64-7679a32f6f93.png" 
-            alt="Kent King - Content Chemist Logo" 
-            className="h-10 md:h-12"
-          />
+          <RouterLink to="/">
+            <img 
+              src="/lovable-uploads/23d3a082-21ba-4964-94c6-d58b0f191609.png" 
+              alt="Kent King - Content Chemist Logo" 
+              className="h-10 md:h-12"
+            />
+          </RouterLink>
         </div>
         
         {/* Desktop Navigation */}
@@ -72,12 +74,12 @@ const Navigation = () => {
               </Link>
             )
           ))}
-          <a
-            href="#contact"
+          <RouterLink
+            to="/contact"
             className="btn-primary"
           >
             Let's Work
-          </a>
+          </RouterLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -125,13 +127,13 @@ const Navigation = () => {
                 </Link>
               )
             ))}
-            <a
-              href="#contact"
+            <RouterLink
+              to="/contact"
               className="btn-primary text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Let's Work
-            </a>
+            </RouterLink>
           </div>
         </div>
       )}

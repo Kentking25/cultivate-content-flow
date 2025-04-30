@@ -2,7 +2,37 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
-import { FloatingBeaker, Bubble } from '../ChemistryElements';
+import { Link as RouterLink } from 'react-router-dom';
+import { FloatingBeaker } from '../ChemistryElements';
+import { Atom } from 'lucide-react';
+
+// Helix animation component
+const FloatingHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
+  return (
+    <motion.div
+      className="absolute"
+      style={{ top, left }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ 
+        opacity: [0.3, 0.6, 0.3], 
+        scale: [1, 1.1, 1],
+        rotate: [0, 180, 360]
+      }}
+      transition={{ 
+        duration: 15,
+        delay,
+        repeat: Infinity,
+        repeatType: "loop"
+      }}
+    >
+      <div className="relative">
+        <Atom size={size} className="text-chemist-orange opacity-50" />
+        <div className="atom-orbit" style={{ width: size * 2, height: size * 2 }}></div>
+        <div className="atom-orbit" style={{ width: size * 1.5, height: size * 2.5, transform: 'rotate(45deg)' }}></div>
+      </div>
+    </motion.div>
+  );
+};
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -12,12 +42,12 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
-      {/* Animated bubbles background */}
-      <Bubble size={100} delay={0} top="20%" left="10%" />
-      <Bubble size={60} delay={0.5} top="60%" left="5%" />
-      <Bubble size={80} delay={1} top="70%" left="80%" />
-      <Bubble size={120} delay={1.5} top="30%" left="85%" />
-      <Bubble size={40} delay={2} top="10%" left="50%" />
+      {/* Animated helix background */}
+      <FloatingHelix size={100} delay={0} top="20%" left="10%" />
+      <FloatingHelix size={60} delay={0.5} top="60%" left="5%" />
+      <FloatingHelix size={80} delay={1} top="70%" left="80%" />
+      <FloatingHelix size={120} delay={1.5} top="30%" left="85%" />
+      <FloatingHelix size={40} delay={2} top="10%" left="50%" />
       
       <div className="container-content flex flex-col items-center justify-center relative z-10">
         <motion.div
@@ -50,7 +80,7 @@ const HeroSection = () => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <a href="#contact" className="btn-primary">Let's Work</a>
+            <RouterLink to="/contact" className="btn-primary">Let's Work</RouterLink>
             <a href="#sos-club" className="btn-secondary">Join SOS Club</a>
           </motion.div>
         </motion.div>

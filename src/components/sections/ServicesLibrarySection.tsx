@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FlaskConical, Beaker, TestTube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -115,9 +116,9 @@ const ServicesLibrarySection = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className="mt-4 pt-4 border-t border-gray-200"
                 >
-                  <a href="#contact" className="text-chemist-orange font-medium hover:underline">
+                  <Link to="/contact" className="text-chemist-orange font-medium hover:underline">
                     Inquire about this service →
-                  </a>
+                  </Link>
                 </motion.div>
               )}
             </motion.div>
@@ -130,9 +131,9 @@ const ServicesLibrarySection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <a href="#contact" className="btn-primary">
+          <Link to="/contact" className="btn-primary">
             Request Custom Services
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

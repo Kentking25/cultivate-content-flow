@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Beaker, FlaskConical, Atom } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ 
   title, 
@@ -9,7 +10,8 @@ const ServiceCard = ({
   icon: Icon, 
   buttonText, 
   buttonLink, 
-  delay 
+  delay,
+  isExternalLink = false
 }: { 
   title: string; 
   description: string; 
@@ -17,6 +19,7 @@ const ServiceCard = ({
   buttonText: string;
   buttonLink: string;
   delay: number;
+  isExternalLink?: boolean;
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -36,9 +39,16 @@ const ServiceCard = ({
       </div>
       <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
       <p className="text-gray-300 mb-6">{description}</p>
-      <a href={buttonLink} className="inline-block font-medium text-chemist-orange hover:underline">
-        {buttonText} →
-      </a>
+      
+      {isExternalLink ? (
+        <a href={buttonLink} className="inline-block font-medium text-chemist-orange hover:underline" target="_blank" rel="noopener noreferrer">
+          {buttonText} →
+        </a>
+      ) : (
+        <Link to={buttonLink} className="inline-block font-medium text-chemist-orange hover:underline">
+          {buttonText} →
+        </Link>
+      )}
     </motion.div>
   );
 };
@@ -68,7 +78,7 @@ const ServicesSection = () => {
             description="Strategic intensives and advisory retainers to fast-track your personal brand growth with proven formulas for content that converts."
             icon={() => <Beaker className="h-10 w-10 text-chemist-orange" />}
             buttonText="Let's Build"
-            buttonLink="#contact"
+            buttonLink="/contact"
             delay={0}
           />
           
@@ -86,8 +96,9 @@ const ServicesSection = () => {
             description="Full-service content marketing with performance creative, paid ads, organic social, AI integration, and conversion-focused funnels."
             icon={() => <Atom className="h-10 w-10 text-chemist-orange" />}
             buttonText="Let's Work"
-            buttonLink="#contact"
+            buttonLink="https://elementtheagency.hbportal.co/public/674cde7cf3636d002dbc1d37"
             delay={0.4}
+            isExternalLink={true}
           />
         </div>
       </motion.div>
