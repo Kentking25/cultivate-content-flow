@@ -208,7 +208,96 @@
   animation: helix-spin 15s linear infinite;
 }
 
-/* New Helix Component Styles */
+/* New DNA Helix Component Styles */
+.dna-container {
+  position: relative;
+  perspective: 1000px;
+}
+
+.dna-helix {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.dna-strand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dna-segment {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #FF5C1B;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 2px rgba(255, 92, 27, 0.7);
+}
+
+.dna-rung {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 92, 27, 0.5) 15%, rgba(255, 92, 27, 0.7) 50%, rgba(255, 92, 27, 0.5) 85%, transparent);
+}
+
+.dna-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 92, 27, 0.1) 0%, rgba(255, 92, 27, 0) 70%);
+  filter: blur(10px);
+}
+
+/* Grid background for hero section */
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 92, 27, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 92, 27, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.2;
+}
+
+/* Numbers overlay effect like in reference image */
+.dna-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('public/lovable-uploads/0af1aa43-58de-46e6-92f2-45b2f246eef2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  min-width: 100%;
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+/* New Helix Component Styles - keeping for compatibility */
 .helix-container {
   position: relative;
   transform-style: preserve-3d;
@@ -233,16 +322,4 @@
 
 .helix-connector {
   position: absolute;
-}
-
-/* Marquee Animation */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  min-width: 100%;
-  display: flex;
-  animation: marquee 30s linear infinite;
 }

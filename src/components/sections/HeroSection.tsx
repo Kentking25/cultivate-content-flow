@@ -4,83 +4,81 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
-import { Atom } from 'lucide-react';
 
-// Improved Helix animation component
-const FloatingHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
+// Advanced DNA Helix animation component inspired by the reference image
+const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
+  // Number of rungs in the DNA ladder
+  const rungs = 12;
+  
   return (
     <motion.div
       className="absolute"
       style={{ top, left }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ 
-        opacity: [0.3, 0.6, 0.3], 
-        scale: [1, 1.1, 1],
-        rotate: [0, 180, 360]
+        opacity: [0.6, 0.8, 0.6], 
+        scale: [1, 1.05, 1],
       }}
       transition={{ 
-        duration: 15,
+        duration: 10,
         delay,
         repeat: Infinity,
         repeatType: "loop"
       }}
     >
-      <div className="relative helix-container">
-        {/* Central atom */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <Atom size={size * 0.4} className="text-chemist-orange" />
-        </div>
-        
-        {/* Helix DNA-like structure */}
-        <div className="helix-strand" style={{ width: size * 2, height: size * 3 }}>
-          {Array(6).fill(0).map((_, i) => (
+      <div className="dna-container" style={{ width: size, height: size * 2 }}>
+        <motion.div 
+          className="dna-helix"
+          animate={{ rotateY: [0, 360] }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          {/* Left strand */}
+          <div className="dna-strand dna-strand-left">
+            {Array(rungs).fill(0).map((_, i) => (
+              <div 
+                key={`left-${i}`}
+                className="dna-segment"
+                style={{
+                  top: `${(i / rungs) * 100}%`,
+                  left: `${Math.sin((i / rungs) * Math.PI * 2) * 50 + 50}%`,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Right strand */}
+          <div className="dna-strand dna-strand-right">
+            {Array(rungs).fill(0).map((_, i) => (
+              <div 
+                key={`right-${i}`}
+                className="dna-segment"
+                style={{
+                  top: `${(i / rungs) * 100}%`,
+                  left: `${Math.sin(((i / rungs) * Math.PI * 2) + Math.PI) * 50 + 50}%`,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Connecting rungs */}
+          {Array(rungs).fill(0).map((_, i) => (
             <div 
-              key={`strand1-${i}`} 
-              className="helix-node"
+              key={`rung-${i}`}
+              className="dna-rung"
               style={{
-                width: size * 0.2,
-                height: size * 0.2,
-                top: `${i * 16.6}%`,
-                left: `${i % 2 === 0 ? '0%' : '90%'}`,
-                backgroundColor: `rgba(237, 137, 54, ${0.7 - (i * 0.1)})`,
+                top: `${(i / rungs) * 100}%`,
+                transform: `rotate(${Math.sin((i / rungs) * Math.PI * 2) * 90}deg)`,
               }}
             />
           ))}
-        </div>
-        
-        <div className="helix-strand" style={{ width: size * 2, height: size * 3 }}>
-          {Array(6).fill(0).map((_, i) => (
-            <div 
-              key={`strand2-${i}`} 
-              className="helix-node"
-              style={{
-                width: size * 0.2,
-                height: size * 0.2,
-                top: `${i * 16.6}%`,
-                left: `${i % 2 === 0 ? '90%' : '0%'}`,
-                backgroundColor: `rgba(237, 137, 54, ${0.7 - (i * 0.1)})`,
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Connecting lines */}
-        <div className="helix-connections" style={{ width: size * 2, height: size * 3 }}>
-          {Array(6).fill(0).map((_, i) => (
-            <div 
-              key={`connector-${i}`}
-              className="helix-connector"
-              style={{
-                width: '90%',
-                height: '1px',
-                top: `${i * 16.6 + 4}%`,
-                left: '5%',
-                backgroundColor: 'rgba(237, 137, 54, 0.3)',
-                transform: `rotate(${i % 2 === 0 ? '5deg' : '-5deg'})`,
-              }}
-            />
-          ))}
-        </div>
+          
+          {/* Glow effect */}
+          <div className="dna-glow"></div>
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -94,12 +92,15 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
-      {/* Animated helix background */}
-      <FloatingHelix size={100} delay={0} top="20%" left="10%" />
-      <FloatingHelix size={60} delay={0.5} top="60%" left="5%" />
-      <FloatingHelix size={80} delay={1} top="70%" left="80%" />
-      <FloatingHelix size={120} delay={1.5} top="30%" left="85%" />
-      <FloatingHelix size={40} delay={2} top="10%" left="50%" />
+      {/* DNA Helix background with different sizes and positions */}
+      <DNAHelix size={120} delay={0} top="10%" left="10%" />
+      <DNAHelix size={80} delay={1.5} top="60%" left="5%" />
+      <DNAHelix size={160} delay={0.5} top="30%" left="75%" />
+      <DNAHelix size={100} delay={2} top="70%" left="80%" />
+      <DNAHelix size={60} delay={3} top="20%" left="50%" />
+      
+      {/* Grid background to match reference image */}
+      <div className="grid-background"></div>
       
       <div className="container-content flex flex-col items-center justify-center relative z-10">
         <motion.div
