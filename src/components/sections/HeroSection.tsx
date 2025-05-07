@@ -6,7 +6,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
 import { Atom } from 'lucide-react';
 
-// Helix animation component
+// Improved Helix animation component
 const FloatingHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
     <motion.div
@@ -25,10 +25,62 @@ const FloatingHelix = ({ size, delay, top, left }: { size: number, delay: number
         repeatType: "loop"
       }}
     >
-      <div className="relative">
-        <Atom size={size} className="text-chemist-orange opacity-50" />
-        <div className="atom-orbit" style={{ width: size * 2, height: size * 2 }}></div>
-        <div className="atom-orbit" style={{ width: size * 1.5, height: size * 2.5, transform: 'rotate(45deg)' }}></div>
+      <div className="relative helix-container">
+        {/* Central atom */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <Atom size={size * 0.4} className="text-chemist-orange" />
+        </div>
+        
+        {/* Helix DNA-like structure */}
+        <div className="helix-strand" style={{ width: size * 2, height: size * 3 }}>
+          {Array(6).fill(0).map((_, i) => (
+            <div 
+              key={`strand1-${i}`} 
+              className="helix-node"
+              style={{
+                width: size * 0.2,
+                height: size * 0.2,
+                top: `${i * 16.6}%`,
+                left: `${i % 2 === 0 ? '0%' : '90%'}`,
+                backgroundColor: `rgba(237, 137, 54, ${0.7 - (i * 0.1)})`,
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="helix-strand" style={{ width: size * 2, height: size * 3 }}>
+          {Array(6).fill(0).map((_, i) => (
+            <div 
+              key={`strand2-${i}`} 
+              className="helix-node"
+              style={{
+                width: size * 0.2,
+                height: size * 0.2,
+                top: `${i * 16.6}%`,
+                left: `${i % 2 === 0 ? '90%' : '0%'}`,
+                backgroundColor: `rgba(237, 137, 54, ${0.7 - (i * 0.1)})`,
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Connecting lines */}
+        <div className="helix-connections" style={{ width: size * 2, height: size * 3 }}>
+          {Array(6).fill(0).map((_, i) => (
+            <div 
+              key={`connector-${i}`}
+              className="helix-connector"
+              style={{
+                width: '90%',
+                height: '1px',
+                top: `${i * 16.6 + 4}%`,
+                left: '5%',
+                backgroundColor: 'rgba(237, 137, 54, 0.3)',
+                transform: `rotate(${i % 2 === 0 ? '5deg' : '-5deg'})`,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </motion.div>
   );

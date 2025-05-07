@@ -208,6 +208,33 @@
   animation: helix-spin 15s linear infinite;
 }
 
+/* New Helix Component Styles */
+.helix-container {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.helix-strand {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.helix-node {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.helix-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.helix-connector {
+  position: absolute;
+}
+
 /* Marquee Animation */
 @keyframes marquee {
   0% { transform: translateX(0); }
