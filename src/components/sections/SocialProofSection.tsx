@@ -51,24 +51,26 @@ const SocialProofSection = () => {
             Join the brands and thought leaders who have transformed their content strategies with The Content Chemist
           </p>
           
-          {/* Brand logos */}
+          {/* Brand logos - now as a marquee */}
           <div className="py-12">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              {brands.map((brand, index) => (
-                <motion.div
-                  key={brand.name}
-                  initial={{ opacity: 0 }}
-                  animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="h-16 md:h-20 flex items-center"
-                >
-                  <img 
-                    src={brand.logo} 
-                    alt={`${brand.name} logo`} 
-                    className="max-h-full max-w-[150px] md:max-w-[180px] object-contain client-logo"
-                  />
-                </motion.div>
-              ))}
+            <div className="relative overflow-hidden">
+              <div className="flex space-x-12 animate-marquee">
+                {[...brands, ...brands].map((brand, index) => (
+                  <motion.div
+                    key={`${brand.name}-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ delay: (index % brands.length) * 0.1, duration: 0.5 }}
+                    className="h-16 md:h-20 flex items-center"
+                  >
+                    <img 
+                      src={brand.logo} 
+                      alt={`${brand.name} logo`} 
+                      className="max-h-full max-w-[150px] md:max-w-[180px] object-contain client-logo"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
           

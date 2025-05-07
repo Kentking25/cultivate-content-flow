@@ -207,3 +207,15 @@
 .helix-animation {
   animation: helix-spin 15s linear infinite;
 }
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  min-width: 100%;
+  display: flex;
+  animation: marquee 30s linear infinite;
+}

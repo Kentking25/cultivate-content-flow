@@ -87,8 +87,9 @@ const ServicesSection = () => {
             description="Join our Content Growth Lab (Free) or upgrade to Success On Social (Paid) for community support and proven content strategies."
             icon={() => <FlaskConical className="h-10 w-10 text-chemist-orange" />}
             buttonText="Join Now"
-            buttonLink="#sos-club"
+            buttonLink="https://successonsocial.co"
             delay={0.2}
+            isExternalLink={true}
           />
           
           <ServiceCard

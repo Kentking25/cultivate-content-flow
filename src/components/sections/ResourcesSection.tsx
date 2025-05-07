@@ -50,11 +50,15 @@ const ResourcesSection = () => {
             <h3 className="text-2xl font-bold mb-6 text-chemist-black">Latest YouTube Videos</h3>
             
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                {/* Placeholder for YouTube embed */}
-                <div className="flex items-center justify-center h-64 bg-gray-200">
-                  <p className="text-chemist-gray">YouTube videos will appear here</p>
-                </div>
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe 
+                  src="https://www.youtube.com/embed/AZKtxIXThzY?si=no8eeC7emh6CEq0T" 
+                  title="Content Chemistry: The Formula for Viral Content" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="w-full h-64 md:h-72"
+                ></iframe>
               </div>
               
               <div className="p-6">
@@ -133,7 +137,9 @@ const ResourcesSection = () => {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <h4 className="font-bold text-lg mb-4 text-chemist-black">Free Download</h4>
                 <a 
-                  href="#"
+                  href="https://successonsocial.co"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="block bg-chemist-black rounded-md p-4 text-white text-center hover:bg-opacity-90 transition-colors"
                 >
                   Download: Content Chemistry Starter Guide

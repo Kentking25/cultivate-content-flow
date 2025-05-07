@@ -81,7 +81,7 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <RouterLink to="/contact" className="btn-primary">Let's Work</RouterLink>
-            <a href="#sos-club" className="btn-secondary">Join SOS Club</a>
+            <a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="btn-secondary">Join SOS Club</a>
           </motion.div>
         </motion.div>
       </div>

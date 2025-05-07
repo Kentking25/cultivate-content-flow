@@ -2,11 +2,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { cn } from '@/lib/utils';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +25,23 @@ const Navigation = () => {
     };
   }, []);
 
+  // Create nav items based on current location
   const navItems = [
-    { name: 'Home', target: 'hero', isRouter: false, path: '' },
-    { name: 'About', target: '/about', isRouter: true },
-    { name: 'Services', target: 'services', isRouter: false, path: '' }
+    { 
+      name: 'Home', 
+      target: '/', 
+      isRouter: true 
+    },
+    { 
+      name: 'About', 
+      target: '/about', 
+      isRouter: true 
+    },
+    { 
+      name: 'Services', 
+      target: location.pathname === '/' ? 'services' : '/#services', 
+      isRouter: location.pathname !== '/' 
+    }
   ];
 
   return (
@@ -68,7 +82,7 @@ const Navigation = () => {
                 spy={true}
                 smooth={true}
                 duration={800}
-                className="nav-item font-medium text-white hover:text-chemist-orange"
+                className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer"
               >
                 {item.name}
               </Link>
@@ -120,7 +134,7 @@ const Navigation = () => {
                   spy={true}
                   smooth={true}
                   duration={800}
-                  className="nav-item font-medium text-white hover:text-chemist-orange"
+                  className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
