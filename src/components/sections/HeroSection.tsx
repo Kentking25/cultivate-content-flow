@@ -5,9 +5,8 @@ import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
 
-// Advanced DNA Helix animation component inspired by the reference image
+// Advanced DNA Helix animation component with dark theme
 const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
-  // Number of rungs in the DNA ladder
   const rungs = 12;
   
   return (
@@ -16,7 +15,7 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
       style={{ top, left }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ 
-        opacity: [0.6, 0.8, 0.6], 
+        opacity: [0.3, 0.6, 0.3], 
         scale: [1, 1.05, 1],
       }}
       transition={{ 
@@ -41,7 +40,7 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
             {Array(rungs).fill(0).map((_, i) => (
               <div 
                 key={`left-${i}`}
-                className="dna-segment"
+                className="dna-segment-dark"
                 style={{
                   top: `${(i / rungs) * 100}%`,
                   left: `${Math.sin((i / rungs) * Math.PI * 2) * 50 + 50}%`,
@@ -55,7 +54,7 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
             {Array(rungs).fill(0).map((_, i) => (
               <div 
                 key={`right-${i}`}
-                className="dna-segment"
+                className="dna-segment-dark"
                 style={{
                   top: `${(i / rungs) * 100}%`,
                   left: `${Math.sin(((i / rungs) * Math.PI * 2) + Math.PI) * 50 + 50}%`,
@@ -68,7 +67,7 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
           {Array(rungs).fill(0).map((_, i) => (
             <div 
               key={`rung-${i}`}
-              className="dna-rung"
+              className="dna-rung-dark"
               style={{
                 top: `${(i / rungs) * 100}%`,
                 transform: `rotate(${Math.sin((i / rungs) * Math.PI * 2) * 90}deg)`,
@@ -77,7 +76,7 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
           ))}
           
           {/* Glow effect */}
-          <div className="dna-glow"></div>
+          <div className="dna-glow-dark"></div>
         </motion.div>
       </div>
     </motion.div>
@@ -91,7 +90,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
+    <section id="hero" className="section bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden" ref={ref}>
       {/* DNA Helix background with different sizes and positions */}
       <DNAHelix size={120} delay={0} top="10%" left="10%" />
       <DNAHelix size={80} delay={1.5} top="60%" left="5%" />
@@ -99,8 +98,11 @@ const HeroSection = () => {
       <DNAHelix size={100} delay={2} top="70%" left="80%" />
       <DNAHelix size={60} delay={3} top="20%" left="50%" />
       
-      {/* Grid background to match reference image */}
-      <div className="grid-background"></div>
+      {/* Dark grid background */}
+      <div className="dark-grid-background"></div>
+      
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
       
       <div className="container-content flex flex-col items-center justify-center relative z-10">
         <motion.div
@@ -114,7 +116,7 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white">
-            The <span className="text-chemist-orange">Content Chemist</span>
+            The <span className="text-transparent bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text">Content Chemist</span>
           </h1>
           
           <motion.p 
@@ -124,7 +126,7 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             Distilling platform science, behavioral psychology, and fearless creativity into repeatable formulas.
-            <span className="block mt-2 text-chemist-orange font-medium">Like a cheat-code for your content.</span>
+            <span className="block mt-2 text-transparent bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text font-medium">Like a cheat-code for your content.</span>
           </motion.p>
           
           <motion.div 
@@ -133,8 +135,8 @@ const HeroSection = () => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <RouterLink to="/contact" className="btn-primary">Let's Work</RouterLink>
-            <a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="btn-secondary">Join SOS Club</a>
+            <RouterLink to="/contact" className="btn-primary-dark">Let's Work</RouterLink>
+            <a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="btn-secondary-dark">Join SOS Club</a>
           </motion.div>
         </motion.div>
       </div>
@@ -145,7 +147,7 @@ const HeroSection = () => {
         spy={true}
         smooth={true}
         duration={800}
-        className="scroll-indicator text-chemist-orange"
+        className="scroll-indicator text-gray-400"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
