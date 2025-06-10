@@ -12,10 +12,10 @@ const AboutSection = () => {
   });
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white relative" ref={ref}>
+    <section id="about" className="py-20 lg:py-32 bg-gradient-to-br from-chemist-white to-gray-50 text-chemist-black relative" ref={ref}>
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-500/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-chemist-gray/10 to-transparent"></div>
       </div>
       
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -25,16 +25,16 @@ const AboutSection = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="order-2 lg:order-1"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-chemist-black mb-6">
             Meet Kent King,<br />
-            <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent">The Content Chemist</span>
+            <span className="text-chemist-orange">The Content Chemist</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-chemist-darkgray mb-8 leading-relaxed">
             Award-winning content strategist, personal brand coach, and founder of SOS Club & Element The Agency.
           </p>
           
-          <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+          <div className="space-y-6 text-lg text-chemist-gray leading-relaxed">
             <p>
               From child actor to DJ to content marketing mastermind, Kent brings a unique perspective to personal branding strategy that blends platform science with fearless creativity.
             </p>
@@ -49,7 +49,7 @@ const AboutSection = () => {
           <div className="mt-10">
             <Link 
               to="/about" 
-              className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:from-gray-500 hover:to-gray-600 hover:scale-105 duration-300 shadow-lg inline-block"
+              className="bg-chemist-orange hover:bg-opacity-90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 duration-300 shadow-lg inline-block"
             >
               Learn More
             </Link>
@@ -63,7 +63,7 @@ const AboutSection = () => {
           className="order-1 lg:order-2 flex justify-center"
         >
           <div className="relative">
-            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-gray-400 to-gray-600 shadow-2xl">
+            <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-chemist-orange shadow-2xl">
               <img
                 src="/lovable-uploads/ce264413-0c4c-4b15-90a9-0d40672de7af.png"
                 alt="Kent King - The Content Chemist"
@@ -71,16 +71,16 @@ const AboutSection = () => {
               />
             </div>
             
-            <div className="absolute -top-6 -right-6 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full p-4 shadow-xl">
-              <Atom className="h-10 w-10 text-black" />
+            <div className="absolute -top-6 -right-6 bg-chemist-orange rounded-full p-4 shadow-xl">
+              <Atom className="h-10 w-10 text-white" />
             </div>
             
-            <div className="absolute -bottom-4 -left-4 bg-black rounded-full p-4 shadow-xl border-2 border-gray-500">
-              <TestTube className="h-10 w-10 text-gray-400" />
+            <div className="absolute -bottom-4 -left-4 bg-chemist-black rounded-full p-4 shadow-xl border-2 border-chemist-orange">
+              <TestTube className="h-10 w-10 text-white" />
             </div>
             
-            <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-gray-800 rounded-full p-4 shadow-xl border-2 border-gray-400">
-              <FlaskConical className="h-10 w-10 text-gray-400" />
+            <div className="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-chemist-white rounded-full p-4 shadow-xl border-2 border-chemist-black">
+              <FlaskConical className="h-10 w-10 text-chemist-black" />
             </div>
           </div>
         </motion.div>
