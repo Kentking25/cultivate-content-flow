@@ -100,18 +100,9 @@
   .btn-secondary {
     @apply bg-chemist-black text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-chemist-darkgray hover:scale-[1.02] duration-300 inline-block text-center border border-chemist-orange;
   }
-
-  /* Dark theme buttons */
-  .btn-primary-dark {
-    @apply bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-md font-medium transition-all hover:from-gray-500 hover:to-gray-600 hover:scale-[1.02] duration-300 inline-block text-center shadow-lg;
-  }
-  
-  .btn-secondary-dark {
-    @apply bg-transparent text-gray-300 px-6 py-3 rounded-md font-medium transition-all hover:bg-gray-800 hover:text-white hover:scale-[1.02] duration-300 inline-block text-center border border-gray-500;
-  }
   
   .nav-item {
-    @apply transition-colors duration-300 hover:text-gray-300 cursor-pointer;
+    @apply transition-colors duration-300 hover:text-chemist-orange cursor-pointer;
   }
   
   .section-title {
@@ -125,17 +116,13 @@
   .card-service {
     @apply p-8 rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl hover:scale-[1.02] border border-chemist-orange border-opacity-50;
   }
-
-  .card-service-dark {
-    @apply p-8 rounded-lg shadow-2xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02];
-  }
   
   .service-icon {
-    @apply text-gray-400 text-4xl mb-4;
+    @apply text-chemist-orange text-4xl mb-4;
   }
   
   .bubble-element {
-    @apply absolute rounded-full bg-gray-500 bg-opacity-10 animate-float;
+    @apply absolute rounded-full bg-chemist-orange bg-opacity-10 animate-float;
   }
   
   .hero-subtitle {
@@ -147,7 +134,7 @@
   }
 
   .chemist-section-transition {
-    @apply absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-gray-900 to-transparent;
+    @apply absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-chemist-white to-transparent;
   }
 
   .client-logo {
@@ -155,11 +142,11 @@
   }
 
   .timeline-item {
-    @apply relative pl-8 pb-8 border-l-2 border-gray-500;
+    @apply relative pl-8 pb-8 border-l-2 border-chemist-orange;
   }
   
   .timeline-dot {
-    @apply absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gray-500 border-4 border-black;
+    @apply absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-chemist-orange border-4 border-chemist-black;
   }
   
   .timeline-date {
@@ -167,7 +154,7 @@
   }
   
   .testimonial-card {
-    @apply bg-gray-800 p-6 rounded-lg shadow-lg;
+    @apply bg-chemist-darkgray p-6 rounded-lg shadow-lg;
   }
   
   .parallax-bg {
@@ -175,11 +162,11 @@
   }
   
   .lab-icon {
-    @apply text-gray-400;
+    @apply text-chemist-orange;
   }
   
   .glass-effect {
-    @apply bg-black bg-opacity-70 backdrop-blur-md;
+    @apply bg-chemist-black bg-opacity-70 backdrop-blur-md;
   }
 }
 
@@ -191,7 +178,7 @@
 
 /* Atom Effect */
 .atom-orbit {
-  @apply absolute rounded-full border border-gray-500 opacity-30;
+  @apply absolute rounded-full border border-chemist-orange opacity-30;
   animation: spin 10s linear infinite;
 }
 
@@ -221,7 +208,7 @@
   animation: helix-spin 15s linear infinite;
 }
 
-/* Dark theme DNA Helix Component Styles */
+/* New DNA Helix Component Styles */
 .dna-container {
   position: relative;
   perspective: 1000px;
@@ -242,54 +229,60 @@
   height: 100%;
 }
 
-.dna-segment-dark {
+.dna-segment {
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #9CA3AF;
+  background-color: #FF5C1B;
   border-radius: 50%;
-  box-shadow: 0 0 8px 2px rgba(156, 163, 175, 0.7);
+  box-shadow: 0 0 8px 2px rgba(255, 92, 27, 0.7);
 }
 
-.dna-rung-dark {
+.dna-rung {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(156, 163, 175, 0.3) 15%, rgba(156, 163, 175, 0.5) 50%, rgba(156, 163, 175, 0.3) 85%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 92, 27, 0.5) 15%, rgba(255, 92, 27, 0.7) 50%, rgba(255, 92, 27, 0.5) 85%, transparent);
 }
 
-.dna-glow-dark {
+.dna-glow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(156, 163, 175, 0.1) 0%, rgba(156, 163, 175, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 92, 27, 0.1) 0%, rgba(255, 92, 27, 0) 70%);
   filter: blur(10px);
 }
 
-/* Dark grid background for hero section */
-.dark-grid-background {
+/* Grid background for hero section */
+.grid-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(156, 163, 175, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(156, 163, 175, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(255, 92, 27, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 92, 27, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
-/* Grid pattern for services section */
-.grid-pattern {
-  background-image: 
-    linear-gradient(rgba(75, 85, 99, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(75, 85, 99, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
+/* Numbers overlay effect like in reference image */
+.dna-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('public/lovable-uploads/0af1aa43-58de-46e6-92f2-45b2f246eef2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 /* Marquee Animation */
