@@ -7,7 +7,6 @@ import ProblemSection from '../components/sections/ProblemSection';
 import MethodSection from '../components/sections/MethodSection';
 import ContentOptionsSection from '../components/sections/ContentOptionsSection';
 import AboutSection from '../components/sections/AboutSection';
-import ServicesSection from '../components/sections/ServicesSection';
 import SocialProofSection from '../components/sections/SocialProofSection';
 import ResourcesSection from '../components/sections/ResourcesSection';
 import Footer from '../components/Footer';
@@ -52,7 +51,6 @@ const Index = () => {
         <MethodSection />
         <ContentOptionsSection />
         <AboutSection />
-        <ServicesSection />
         <SocialProofSection />
         <ResourcesSection />
       </div>

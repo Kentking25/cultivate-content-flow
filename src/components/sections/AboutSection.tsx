@@ -81,7 +81,11 @@ const AboutSection = () => {
               </p>
               
               <p>
-                I've spent years in entertainment (yeah, I was a kid actor), then DJing and event production, and now helping entrepreneurs and creators build authority through strategic content.
+                I've spent years in entertainment (yeah, I was a kid actor), then DJing and event production, and now helping entrepreneurs and creators build authority through strategic content. <strong className="text-white">The same principles that make compelling entertainment make compelling content.</strong>
+              </p>
+              
+              <p>
+                The Content Chemistry method combines my entertainment industry background with proven marketing psychology. No fluff, no generic advice – just your personalized formula for content that converts.
               </p>
               
               <div className="bg-chemist-orange bg-opacity-20 border-l-4 border-chemist-orange p-4 rounded-r-lg mt-6">
