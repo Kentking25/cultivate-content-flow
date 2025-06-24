@@ -59,7 +59,7 @@ const CohortHeroSection = () => {
 
           <div className="space-y-4">
             <Link
-              to="/contact"
+              to="/services/content-cohort/apply"
               className="btn-primary text-xl px-8 py-4 inline-block"
             >
               Apply for Your Spot →
