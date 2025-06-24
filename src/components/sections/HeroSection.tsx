@@ -1,41 +1,10 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
 import { Check } from 'lucide-react';
-
-// DNA Helix image component
-const DNAHelixImage = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
-  return (
-    <motion.div
-      className="absolute"
-      style={{ top, left }}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ 
-        opacity: [0.6, 0.8, 0.6], 
-        scale: [1, 1.05, 1],
-        rotate: [0, 360]
-      }}
-      transition={{ 
-        opacity: { duration: 10, delay, repeat: Infinity, repeatType: "loop" },
-        scale: { duration: 10, delay, repeat: Infinity, repeatType: "loop" },
-        rotate: { duration: 15, repeat: Infinity, ease: "linear" }
-      }}
-    >
-      <img 
-        src="/lovable-uploads/98e50451-66bd-45a2-9971-8f50ef236fd4.png" 
-        alt="DNA Helix" 
-        style={{ 
-          width: size, 
-          height: size * 2,
-          filter: 'drop-shadow(0 0 20px rgba(255, 107, 53, 0.3))'
-        }}
-        className="object-contain"
-      />
-    </motion.div>
-  );
-};
 
 const HeroSection = () => {
   const [ref, inView] = useInView({
@@ -45,14 +14,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
-      {/* DNA Helix background with different sizes and positions */}
-      <DNAHelixImage size={120} delay={0} top="10%" left="10%" />
-      <DNAHelixImage size={80} delay={1.5} top="60%" left="5%" />
-      <DNAHelixImage size={160} delay={0.5} top="30%" left="75%" />
-      <DNAHelixImage size={100} delay={2} top="70%" left="80%" />
-      <DNAHelixImage size={60} delay={3} top="20%" left="50%" />
-      
-      {/* Grid background to match reference image */}
+      {/* Simple grid background to match reference image */}
       <div className="grid-background"></div>
       
       <div className="container-content relative z-10">
