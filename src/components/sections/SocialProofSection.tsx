@@ -35,7 +35,7 @@ const SocialProofSection = () => {
     {
       name: "Microsoft",
       src: "/lovable-uploads/7f60bb71-e3a3-47fa-b30b-e332f26a7576.png",
-      size: "w-32 h-12"
+      size: "w-48 h-18"
     },
     {
       name: "inBeat",
@@ -66,7 +66,7 @@ const SocialProofSection = () => {
     {
       name: "Blaze",
       src: "/lovable-uploads/78ef4f86-64c9-4290-bba5-7da74dd57f77.png",
-      size: "w-36 h-20"
+      size: "w-52 h-28"
     },
     {
       name: "ClickUp",
@@ -82,17 +82,17 @@ const SocialProofSection = () => {
     {
       name: "Natulang",
       src: "/lovable-uploads/45963ba7-b49d-4e3b-92c6-1c5b6060c07b.png",
-      size: "w-32 h-12"
+      size: "w-48 h-18"
     },
     {
       name: "iTrust Capital",
       src: "/lovable-uploads/85bce84f-e11f-4fc1-a123-0b4c657faf8e.png",
-      size: "w-32 h-12"
+      size: "w-48 h-18"
     },
     {
       name: "Crown Mag",
       src: "/lovable-uploads/d70434ef-d6a7-4ebb-99d0-fff1cb1eeb3d.png",
-      size: "w-36 h-20"
+      size: "w-52 h-28"
     }
   ];
 
