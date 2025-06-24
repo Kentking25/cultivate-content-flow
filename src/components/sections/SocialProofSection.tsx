@@ -1,36 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
-const testimonials = [
-  {
-    quote: "Kent's strategies transformed how we approach content. Our engagement tripled in just 60 days.",
-    author: "Sarah Johnson",
-    position: "Marketing Director, Printify",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    quote: "The Content Chemist formula turned our bland social strategy into our #1 customer acquisition channel.",
-    author: "Michael Chen",
-    position: "Founder, Natulang",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-  },
-  {
-    quote: "Working with Kent was the best investment we made. His team's creative process is truly one-of-a-kind.",
-    author: "Ashley Rodriguez",
-    position: "CMO, Dr Squatch",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-  }
-];
-
-const brands = [
-  { name: "Microsoft", logo: "/lovable-uploads/cf30c19d-eb47-438c-a733-1160acf625c0.png" },
-  { name: "Printify", logo: "/lovable-uploads/d4da68f5-b274-4296-8abd-765b80c8a91f.png" },
-  { name: "CRWN Magazine", logo: "/lovable-uploads/c87e7451-9958-4a59-b548-9c1a481cafb5.png" },
-  { name: "Skillz", logo: "/lovable-uploads/3144905c-f635-48a4-b66b-82f69e445231.png" },
-  { name: "Trap Karaoke", logo: "/lovable-uploads/11e52c89-f33d-4f93-bf03-713db7edb4d7.png" },
-  { name: "Zeffy", logo: "/lovable-uploads/2eb8b4f6-d9ce-4ca6-8ae3-7d9505b1eb91.png" },
-];
+import { Star, Quote } from 'lucide-react';
 
 const SocialProofSection = () => {
   const [ref, inView] = useInView({
@@ -38,77 +9,100 @@ const SocialProofSection = () => {
     threshold: 0.1,
   });
 
+  const testimonials = [
+    {
+      text: "Kent's content strategy completely transformed my business. I went from posting randomly to having a clear, systematic approach that actually converts.",
+      author: "Sarah Martinez",
+      role: "Business Coach",
+      rating: 5,
+    },
+    {
+      text: "The Content Chemistry Method gave me the exact framework I needed. No more guessing what to post - I have a proven system that works.",
+      author: "Mike Chen",
+      role: "Course Creator",
+      rating: 5,
+    },
+    {
+      text: "Working with Kent was a game-changer. My engagement increased by 300% and I finally built the personal brand I always wanted.",
+      author: "Lisa Thompson",
+      role: "Consultant",
+      rating: 5,
+    },
+  ];
+
   return (
-    <section id="social-proof" className="section bg-chemist-white relative" ref={ref}>
-      <div className="container-content text-center">
+    <section id="social-proof" className="section bg-gray-50" ref={ref}>
+      <div className="container-content">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <h2 className="section-title mb-3">Trusted By Industry Leaders</h2>
-          <p className="section-subtitle mx-auto">
-            Join the brands and thought leaders who have transformed their content strategies with The Content Chemist
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            What People Are Saying
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            See how the Content Chemistry Method has transformed businesses just like yours
           </p>
-          
-          {/* Brand logos - now as a marquee */}
-          <div className="py-12">
-            <div className="relative overflow-hidden">
-              <div className="flex space-x-12 animate-marquee">
-                {[...brands, ...brands].map((brand, index) => (
-                  <motion.div
-                    key={`${brand.name}-${index}`}
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: (index % brands.length) * 0.1, duration: 0.5 }}
-                    className="h-16 md:h-20 flex items-center"
-                  >
-                    <img 
-                      src={brand.logo} 
-                      alt={`${brand.name} logo`} 
-                      className="max-h-full max-w-[150px] md:max-w-[180px] object-contain client-logo"
-                    />
-                  </motion.div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 h-full flex flex-col"
+            >
+              <div className="flex items-center mb-6">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-chemist-orange text-chemist-orange" />
                 ))}
               </div>
-            </div>
-          </div>
-          
-          {/* Testimonials */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold mb-10 text-chemist-black">What Clients Are Saying</h3>
+              
+              <Quote className="h-8 w-8 text-chemist-orange mb-4" />
+              
+              <p className="text-gray-700 text-lg leading-relaxed mb-6 flex-grow">
+                "{testimonial.text}"
+              </p>
+              
+              <div className="border-t border-gray-100 pt-6">
+                <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                <p className="text-chemist-orange">{testimonial.role}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="py-16 border-t border-gray-200">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              Trusted by Industry Leaders
+            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  className="testimonial-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                >
-                  <div className="mb-4">
-                    <svg className="h-8 w-8 text-chemist-orange" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-                  <p className="text-chemist-gray mb-4">{testimonial.quote}</p>
-                  <div className="flex items-center">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full mr-4 object-cover"
-                    />
-                    <div>
-                      <p className="font-bold text-chemist-black">{testimonial.author}</p>
-                      <p className="text-sm text-chemist-gray">{testimonial.position}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
+                <span className="text-gray-600 font-semibold">Featured On</span>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
+                <span className="text-gray-600 font-semibold">Podcast Guest</span>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
+                <span className="text-gray-600 font-semibold">Industry Expert</span>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
+                <span className="text-gray-600 font-semibold">Thought Leader</span>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
