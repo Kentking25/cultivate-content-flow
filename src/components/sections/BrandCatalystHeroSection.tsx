@@ -58,7 +58,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">12</div>
               <div className="text-gray-300">Strategy Sessions</div>
-            </div>
+            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">Daily</div>
               <div className="text-gray-300">Voxer Access</div>
-            </div>
+            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">5-6</div>
               <div className="text-gray-300">People Only</div>
-            </div>
+            </motion.div>
           </div>
 
           <motion.div
