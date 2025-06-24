@@ -54,15 +54,15 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-8 pt-12 border-t border-gray-700">
               <div>
                 <div className="text-3xl font-bold text-white">90M+</div>
-                <div className="text-gray-400">Organic Views</div>
+                <div className="text-gray-400">Organic Views Earned</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white">#1</div>
-                <div className="text-gray-400">Amazon Bestseller</div>
+                <div className="text-3xl font-bold text-white">+150</div>
+                <div className="text-gray-400">Industries Analyzed</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-white">10x</div>
-                <div className="text-gray-400">Engagement Boost</div>
+                <div className="text-gray-400">Average Engagement Boost</div>
               </div>
             </div>
           </motion.div>
