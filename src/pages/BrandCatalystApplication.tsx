@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
@@ -41,8 +40,9 @@ const BrandCatalystApplication = () => {
                 <h3 className="text-2xl font-bold text-center mb-6">90-Day Brand Catalyst</h3>
                 
                 <div className="text-center mb-6">
-                  <div className="text-5xl md:text-6xl font-bold text-chemist-orange mb-2">$2,997</div>
-                  <div className="text-gray-300">or 3 payments of $1,097</div>
+                  <div className="text-3xl font-medium text-gray-400 line-through mb-2">$4,997</div>
+                  <div className="text-5xl md:text-6xl font-bold text-chemist-orange mb-2">$3,457</div>
+                  <div className="text-gray-300">or 3 payments of $1,197</div>
                 </div>
 
                 <div className="space-y-4 mb-8">
