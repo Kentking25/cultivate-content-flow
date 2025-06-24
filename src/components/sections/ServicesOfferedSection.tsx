@@ -32,8 +32,8 @@ const ServiceCard = ({
       transition={{ duration: 0.8, delay }}
     >
       <div className="text-center mb-6">
-        <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Icon className="h-8 w-8 text-chemist-orange" />
+        <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-4">
+          <Icon className="h-8 w-8 text-white" />
         </div>
         
         <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
