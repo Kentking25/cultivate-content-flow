@@ -21,9 +21,8 @@ const ThreeWaysSection = () => {
       }} transition={{
         duration: 0.8
       }} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Three Ways to Start
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Three Ways to Master Your
+Content</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose the approach that matches your current needs and timeline.
           </p>
@@ -48,10 +47,8 @@ const ThreeWaysSection = () => {
               <Search className="h-8 w-8 text-white" />
             </div>
             
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Start with Assessment</h3>
-            <p className="text-gray-600 mb-6">
-              Not sure where you are? Take our 2-minute Content Chemistry Assessment to discover your specific blind spots.
-            </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Free Assessment</h3>
+            <p className="text-gray-600 mb-6">Not sure where you are? Discover your content gaps & blind spots in 2 mins.</p>
             
             
           </motion.div>
@@ -75,9 +72,7 @@ const ThreeWaysSection = () => {
             </div>
             
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Cohort</h3>
-            <p className="text-gray-600 mb-6">
-              Ready to work with others? Join our 7-week Content Chemistry Cohort with weekly group calls.
-            </p>
+            <p className="text-gray-600 mb-6">Ready to work?  6-week Content Chemistry Cohort with weekly group calls.</p>
             
             
           </motion.div>
@@ -100,10 +95,8 @@ const ThreeWaysSection = () => {
               <TrendingUp className="h-8 w-8 text-white" />
             </div>
             
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Go 1:1</h3>
-            <p className="text-gray-600 mb-6">
-              Need personalized attention? The Brand Catalyst offers 90 days of intensive 1:1 work.
-            </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">1:1 Coaching</h3>
+            <p className="text-gray-600 mb-6">Personalized Strategy & daily support.</p>
             
             
           </motion.div>
