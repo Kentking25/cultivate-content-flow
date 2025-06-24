@@ -1,24 +1,26 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Search, Users, TrendingUp } from 'lucide-react';
-
 const ThreeWaysSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1,
+    threshold: 0.1
   });
-
-  return (
-    <section className="section bg-white" ref={ref}>
+  return <section className="section bg-white" ref={ref}>
       <div className="container-content">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={inView ? {
+        opacity: 1,
+        y: 0
+      } : {
+        opacity: 0,
+        y: 30
+      }} transition={{
+        duration: 0.8
+      }} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Three Ways to Start
           </h2>
@@ -29,12 +31,19 @@ const ThreeWaysSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Assessment */}
-          <motion.div
-            className="bg-gray-50 rounded-2xl p-8 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
+          <motion.div className="bg-gray-50 rounded-2xl p-8 text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={inView ? {
+          opacity: 1,
+          y: 0
+        } : {
+          opacity: 0,
+          y: 30
+        }} transition={{
+          duration: 0.8,
+          delay: 0.1
+        }}>
             <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-6">
               <Search className="h-8 w-8 text-white" />
             </div>
@@ -44,21 +53,23 @@ const ThreeWaysSection = () => {
               Not sure where you are? Take our 2-minute Content Chemistry Assessment to discover your specific blind spots.
             </p>
             
-            <Link 
-              to="/assessment"
-              className="btn-primary inline-block"
-            >
-              Take Assessment →
-            </Link>
+            
           </motion.div>
 
           {/* Cohort */}
-          <motion.div
-            className="bg-gray-50 rounded-2xl p-8 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <motion.div className="bg-gray-50 rounded-2xl p-8 text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={inView ? {
+          opacity: 1,
+          y: 0
+        } : {
+          opacity: 0,
+          y: 30
+        }} transition={{
+          duration: 0.8,
+          delay: 0.2
+        }}>
             <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
@@ -68,21 +79,23 @@ const ThreeWaysSection = () => {
               Ready to work with others? Join our 7-week Content Chemistry Cohort with weekly group calls.
             </p>
             
-            <Link 
-              to="/services/content-cohort"
-              className="btn-primary inline-block"
-            >
-              Learn More →
-            </Link>
+            
           </motion.div>
 
           {/* 1:1 */}
-          <motion.div
-            className="bg-gray-50 rounded-2xl p-8 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+          <motion.div className="bg-gray-50 rounded-2xl p-8 text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={inView ? {
+          opacity: 1,
+          y: 0
+        } : {
+          opacity: 0,
+          y: 30
+        }} transition={{
+          duration: 0.8,
+          delay: 0.3
+        }}>
             <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-6">
               <TrendingUp className="h-8 w-8 text-white" />
             </div>
@@ -92,17 +105,10 @@ const ThreeWaysSection = () => {
               Need personalized attention? The Brand Catalyst offers 90 days of intensive 1:1 work.
             </p>
             
-            <Link 
-              to="/services/brand-catalyst"
-              className="btn-primary inline-block"
-            >
-              Learn More →
-            </Link>
+            
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ThreeWaysSection;
