@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Star, Quote } from 'lucide-react';
@@ -30,6 +31,7 @@ const SocialProofSection = () => {
   ];
 
   const companyLogos = [
+    // First row - original logos
     {
       name: "Microsoft",
       src: "/lovable-uploads/7f60bb71-e3a3-47fa-b30b-e332f26a7576.png"
@@ -46,6 +48,24 @@ const SocialProofSection = () => {
       name: "Printify",
       src: "/lovable-uploads/827e4c22-1303-47e3-a708-c977115cfa44.png"
     },
+    // Second row - new logos
+    {
+      name: "Dr. Squatch",
+      src: "/lovable-uploads/063b345e-65ea-4dd4-8b73-048c5a3736e6.png"
+    },
+    {
+      name: "MagFast",
+      src: "/lovable-uploads/ed456777-73d3-4d8c-a5bf-78456162e053.png"
+    },
+    {
+      name: "Blaze",
+      src: "/lovable-uploads/78ef4f86-64c9-4290-bba5-7da74dd57f77.png"
+    },
+    {
+      name: "ClickUp",
+      src: "/lovable-uploads/8553773e-555d-40bb-b15e-b6ecc43c4b7c.png"
+    },
+    // Third row - remaining logos
     {
       name: "Zeffy",
       src: "/lovable-uploads/ffc94f8f-1147-4b7a-bf12-4c381c731718.png"
@@ -55,12 +75,12 @@ const SocialProofSection = () => {
       src: "/lovable-uploads/45963ba7-b49d-4e3b-92c6-1c5b6060c07b.png"
     },
     {
-      name: "Profile Image",
-      src: "/lovable-uploads/2314f8a5-98c0-4eb6-afc7-9b023220d156.png"
-    },
-    {
       name: "iTrust Capital",
       src: "/lovable-uploads/85bce84f-e11f-4fc1-a123-0b4c657faf8e.png"
+    },
+    {
+      name: "Crown Mag",
+      src: "/lovable-uploads/d70434ef-d6a7-4ebb-99d0-fff1cb1eeb3d.png"
     }
   ];
 
@@ -121,13 +141,52 @@ const SocialProofSection = () => {
               Trusted by Industry Leaders
             </h3>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {companyLogos.map((logo, index) => (
+            {/* First Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center mb-8">
+              {companyLogos.slice(0, 4).map((logo, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-md border border-gray-100 h-24 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Second Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center mb-8">
+              {companyLogos.slice(4, 8).map((logo, index) => (
+                <motion.div
+                  key={index + 4}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-md border border-gray-100 h-24 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Third Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              {companyLogos.slice(8, 12).map((logo, index) => (
+                <motion.div
+                  key={index + 8}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 1.6 + index * 0.1 }}
                   className="bg-white rounded-xl p-6 shadow-md border border-gray-100 h-24 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
                 >
                   <img 
