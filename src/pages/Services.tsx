@@ -4,6 +4,7 @@ import ScrollProgress from '../components/ScrollProgress';
 import Footer from '../components/Footer';
 import { LabBackground } from '../components/ChemistryElements';
 import ServicesOfferedSection from '../components/sections/ServicesOfferedSection';
+import ThreeWaysSection from '../components/sections/ThreeWaysSection';
 
 const Services = () => {
   return (
@@ -13,6 +14,7 @@ const Services = () => {
       <LabBackground />
       
       <div className="pt-20">
+        <ThreeWaysSection />
         <ServicesOfferedSection />
       </div>
       
