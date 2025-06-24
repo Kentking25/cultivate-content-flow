@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
+import { Check } from 'lucide-react';
 
 // Advanced DNA Helix animation component inspired by the reference image
 const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
@@ -102,41 +103,99 @@ const HeroSection = () => {
       {/* Grid background to match reference image */}
       <div className="grid-background"></div>
       
-      <div className="container-content flex flex-col items-center justify-center relative z-10">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <div className="flex items-center justify-center mb-6">
-            <FloatingBeaker className="relative" />
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white">
-            The <span className="text-chemist-orange">Content Chemist</span>
-          </h1>
-          
-          <motion.p 
-            className="hero-subtitle mx-auto text-gray-300"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+      <div className="container-content relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen">
+          {/* Left Column - Main Content */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            Distilling platform science, behavioral psychology, and fearless creativity into repeatable formulas.
-            <span className="block mt-2 text-chemist-orange font-medium">Like a cheat-code for your content.</span>
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <RouterLink to="/contact" className="btn-primary">Let's Work</RouterLink>
-            <a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="btn-secondary">Join SOS Club</a>
+            <div className="flex items-center gap-3 mb-6">
+              <FloatingBeaker className="relative" />
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Turn Your<br />
+              Expertise Into<br />
+              <span className="text-chemist-orange">Income-<br />Replacing<br />Content</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed">
+              Get the exact step-by-step system that helped entrepreneurs grow to 90K followers and hit #1 on Amazon. Finally know exactly what to post with a proven game plan.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
+              <RouterLink to="/contact" className="btn-primary text-lg px-8 py-4">
+                Get Your Content Game Plan →
+              </RouterLink>
+              <button className="text-white border border-gray-600 px-6 py-3 rounded-md font-medium hover:border-chemist-orange transition-colors">
+                Book Free Assessment
+              </button>
+            </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-gray-700">
+              <div>
+                <div className="text-3xl font-bold text-white">90K+</div>
+                <div className="text-gray-400">Followers Gained</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">#1</div>
+                <div className="text-gray-400">Amazon Bestseller</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">10x</div>
+                <div className="text-gray-400">Engagement Boost</div>
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right Column - Method Card */}
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+          >
+            <div className="bg-chemist-orange rounded-2xl p-8 max-w-md w-full">
+              <h3 className="text-2xl font-bold text-white mb-6">
+                The Content Chemistry Method
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white bg-opacity-20 rounded-full p-1">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Industry-specific formulas</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-white bg-opacity-20 rounded-full p-1">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Personal story integration</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-white bg-opacity-20 rounded-full p-1">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Step-by-step game plan</span>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="bg-white bg-opacity-20 rounded-full p-1">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Proven results system</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
       
       {/* Scroll down indicator */}
