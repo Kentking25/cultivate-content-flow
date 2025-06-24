@@ -9,7 +9,6 @@ import CohortIncludesSection from '../components/sections/CohortIncludesSection'
 import CohortTestimonialsSection from '../components/sections/CohortTestimonialsSection';
 import CohortCTASection from '../components/sections/CohortCTASection';
 import CohortFAQSection from '../components/sections/CohortFAQSection';
-import CohortFinalCTASection from '../components/sections/CohortFinalCTASection';
 
 const ContentCohort = () => {
   return (
@@ -25,7 +24,6 @@ const ContentCohort = () => {
         <CohortTestimonialsSection />
         <CohortCTASection />
         <CohortFAQSection />
-        <CohortFinalCTASection />
       </div>
       
       <Footer />
