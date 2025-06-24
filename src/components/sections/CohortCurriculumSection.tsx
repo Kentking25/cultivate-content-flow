@@ -1,13 +1,20 @@
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Book, Target, Calendar, Video, Zap, Users, TrendingUp } from 'lucide-react';
 import { CheckCircle } from 'lucide-react';
+import { useRef } from 'react';
 
 const CohortCurriculumSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
+  });
+
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
   });
 
   const weeks = [
@@ -114,44 +121,63 @@ const CohortCurriculumSection = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {weeks.map((week, index) => (
-            <motion.div
-              key={week.week}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
-            >
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center">
-                    <week.icon className="h-8 w-8 text-chemist-orange" />
-                  </div>
-                </div>
-                
-                <div className="flex-grow">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="bg-chemist-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Week {week.week}
-                    </span>
-                    <h3 className="text-2xl font-bold text-gray-900">{week.title}</h3>
+        <div ref={containerRef} className="relative space-y-8">
+          {weeks.map((week, index) => {
+            const yTransform = useTransform(
+              scrollYProgress,
+              [0, 1],
+              [0, -50 * index]
+            );
+            
+            const scaleTransform = useTransform(
+              scrollYProgress,
+              [index * 0.1, (index + 1) * 0.1],
+              [1, 0.95]
+            );
+
+            return (
+              <motion.div
+                key={week.week}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                style={{ 
+                  y: yTransform,
+                  scale: scaleTransform,
+                  zIndex: weeks.length - index
+                }}
+                className="bg-gray-50 rounded-2xl p-8 border border-gray-200 relative"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center">
+                      <week.icon className="h-8 w-8 text-chemist-orange" />
+                    </div>
                   </div>
                   
-                  <p className="text-gray-600 mb-6 text-lg">{week.description}</p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {week.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
-                      </div>
-                    ))}
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="bg-chemist-orange text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Week {week.week}
+                      </span>
+                      <h3 className="text-2xl font-bold text-gray-900">{week.title}</h3>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 text-lg">{week.description}</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {week.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start gap-3">
+                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
