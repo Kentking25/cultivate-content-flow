@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Search, Users, TrendingUp, CheckCircle, Clock, MessageCircle } from 'lucide-react';
@@ -11,7 +10,8 @@ const ServiceCard = ({
   programDetails,
   icon: Icon,
   delay,
-  buttonText = "Learn More"
+  buttonText = "Learn More",
+  linkTo = "/contact"
 }: {
   title: string;
   subtitle: string;
@@ -21,6 +21,7 @@ const ServiceCard = ({
   icon: any;
   delay: number;
   buttonText?: string;
+  linkTo?: string;
 }) => {
   return (
     <motion.div
@@ -79,7 +80,7 @@ const ServiceCard = ({
       {/* CTA */}
       <div className="text-center mt-auto">
         <a
-          href="#contact"
+          href={linkTo}
           className="btn-primary text-lg px-6 py-3 inline-block mb-3 w-full"
         >
           {buttonText} →
@@ -155,6 +156,7 @@ const ServicesOfferedSection = () => {
             icon={Search}
             delay={0}
             buttonText="Get Assessment"
+            linkTo="/contact"
           />
           
           <ServiceCard
@@ -168,7 +170,8 @@ const ServicesOfferedSection = () => {
             }}
             icon={Users}
             delay={0.2}
-            buttonText="Apply for Cohort"
+            buttonText="Learn More"
+            linkTo="/services/content-cohort"
           />
           
           <ServiceCard
@@ -183,6 +186,7 @@ const ServicesOfferedSection = () => {
             icon={TrendingUp}
             delay={0.4}
             buttonText="Apply for Catalyst"
+            linkTo="/contact"
           />
         </div>
       </div>
