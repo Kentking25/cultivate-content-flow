@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Assessment = () => {
   const [ref, inView] = useInView({
@@ -21,6 +22,19 @@ const Assessment = () => {
     "Instant insights delivered",
     "No email required to start"
   ];
+
+  useEffect(() => {
+    // Load Fillout script
+    const script = document.createElement('script');
+    script.src = 'https://server.fillout.com/embed/v1/';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="bg-chemist-white min-h-screen">
@@ -125,13 +139,14 @@ const Assessment = () => {
                 ))}
               </div>
 
-              {/* Placeholder for Fillout Form */}
-              <div className="bg-white rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
-                <div className="text-gray-500">
-                  <div className="text-lg font-medium mb-2">Assessment Form Placeholder</div>
-                  <div className="text-sm">Fillout form will be embedded here</div>
-                </div>
-              </div>
+              {/* Fillout Form */}
+              <div 
+                style={{width:'100%', height:'500px'}} 
+                data-fillout-id="uhqB6kVA2Rus" 
+                data-fillout-embed-type="standard" 
+                data-fillout-inherit-parameters 
+                data-fillout-dynamic-resize
+              ></div>
             </motion.div>
           </div>
         </section>
