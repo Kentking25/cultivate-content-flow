@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
 import HeroSection from '../components/sections/HeroSection';
+import ProblemSection from '../components/sections/ProblemSection';
+import MethodSection from '../components/sections/MethodSection';
 import AboutSection from '../components/sections/AboutSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import SocialProofSection from '../components/sections/SocialProofSection';
