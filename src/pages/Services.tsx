@@ -6,7 +6,6 @@ import { LabBackground } from '../components/ChemistryElements';
 import ContentBlockingSection from '../components/sections/ContentBlockingSection';
 import ContentMasterySection from '../components/sections/ContentMasterySection';
 import ServicesOfferedSection from '../components/sections/ServicesOfferedSection';
-import ServicesCTASection from '../components/sections/ServicesCTASection';
 
 const Services = () => {
   return (
@@ -19,7 +18,6 @@ const Services = () => {
         <ContentBlockingSection />
         <ContentMasterySection />
         <ServicesOfferedSection />
-        <ServicesCTASection />
       </div>
       
       <Footer />
