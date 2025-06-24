@@ -34,53 +34,65 @@ const SocialProofSection = () => {
     // First row - original logos
     {
       name: "Microsoft",
-      src: "/lovable-uploads/7f60bb71-e3a3-47fa-b30b-e332f26a7576.png"
+      src: "/lovable-uploads/7f60bb71-e3a3-47fa-b30b-e332f26a7576.png",
+      size: "w-20 h-8"
     },
     {
       name: "inBeat",
-      src: "/lovable-uploads/c1b6341e-39ef-426b-bea7-d871c648ee36.png"
+      src: "/lovable-uploads/c1b6341e-39ef-426b-bea7-d871c648ee36.png",
+      size: "w-16 h-10"
     },
     {
       name: "Trap Karaoke",
-      src: "/lovable-uploads/3cc7af20-7d24-459b-a96b-651476a30dc8.png"
+      src: "/lovable-uploads/3cc7af20-7d24-459b-a96b-651476a30dc8.png",
+      size: "w-20 h-8"
     },
     {
       name: "Printify",
-      src: "/lovable-uploads/827e4c22-1303-47e3-a708-c977115cfa44.png"
+      src: "/lovable-uploads/827e4c22-1303-47e3-a708-c977115cfa44.png",
+      size: "w-20 h-8"
     },
     // Second row - new logos
     {
       name: "Dr. Squatch",
-      src: "/lovable-uploads/063b345e-65ea-4dd4-8b73-048c5a3736e6.png"
+      src: "/lovable-uploads/063b345e-65ea-4dd4-8b73-048c5a3736e6.png",
+      size: "w-24 h-12"
     },
     {
       name: "MagFast",
-      src: "/lovable-uploads/ed456777-73d3-4d8c-a5bf-78456162e053.png"
+      src: "/lovable-uploads/ed456777-73d3-4d8c-a5bf-78456162e053.png",
+      size: "w-20 h-8"
     },
     {
       name: "Blaze",
-      src: "/lovable-uploads/78ef4f86-64c9-4290-bba5-7da74dd57f77.png"
+      src: "/lovable-uploads/78ef4f86-64c9-4290-bba5-7da74dd57f77.png",
+      size: "w-24 h-12"
     },
     {
       name: "ClickUp",
-      src: "/lovable-uploads/8553773e-555d-40bb-b15e-b6ecc43c4b7c.png"
+      src: "/lovable-uploads/8553773e-555d-40bb-b15e-b6ecc43c4b7c.png",
+      size: "w-20 h-8"
     },
     // Third row - remaining logos
     {
       name: "Zeffy",
-      src: "/lovable-uploads/ffc94f8f-1147-4b7a-bf12-4c381c731718.png"
+      src: "/lovable-uploads/ffc94f8f-1147-4b7a-bf12-4c381c731718.png",
+      size: "w-24 h-12"
     },
     {
       name: "Natulang",
-      src: "/lovable-uploads/45963ba7-b49d-4e3b-92c6-1c5b6060c07b.png"
+      src: "/lovable-uploads/45963ba7-b49d-4e3b-92c6-1c5b6060c07b.png",
+      size: "w-20 h-8"
     },
     {
       name: "iTrust Capital",
-      src: "/lovable-uploads/85bce84f-e11f-4fc1-a123-0b4c657faf8e.png"
+      src: "/lovable-uploads/85bce84f-e11f-4fc1-a123-0b4c657faf8e.png",
+      size: "w-20 h-8"
     },
     {
       name: "Crown Mag",
-      src: "/lovable-uploads/d70434ef-d6a7-4ebb-99d0-fff1cb1eeb3d.png"
+      src: "/lovable-uploads/d70434ef-d6a7-4ebb-99d0-fff1cb1eeb3d.png",
+      size: "w-24 h-12"
     }
   ];
 
@@ -154,7 +166,7 @@ const SocialProofSection = () => {
                   <img 
                     src={logo.src} 
                     alt={logo.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`${logo.size} object-contain filter grayscale hover:grayscale-0 transition-all duration-300`}
                   />
                 </motion.div>
               ))}
@@ -173,7 +185,7 @@ const SocialProofSection = () => {
                   <img 
                     src={logo.src} 
                     alt={logo.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`${logo.size} object-contain filter grayscale hover:grayscale-0 transition-all duration-300`}
                   />
                 </motion.div>
               ))}
@@ -192,7 +204,7 @@ const SocialProofSection = () => {
                   <img 
                     src={logo.src} 
                     alt={logo.name}
-                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`${logo.size} object-contain filter grayscale hover:grayscale-0 transition-all duration-300`}
                   />
                 </motion.div>
               ))}
