@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
@@ -57,7 +56,7 @@ const CohortCTASection = () => {
           
           <div className="space-y-4 mb-8">
             <Link
-              to="/assessment"
+              to="/services/content-cohort/apply"
               className="bg-chemist-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 inline-block text-xl"
             >
               Apply for Content Chemistry Cohort →
