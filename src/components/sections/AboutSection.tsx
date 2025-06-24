@@ -1,7 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Users, BarChart3, Mic, Play, Award } from 'lucide-react';
+import { Users, BarChart3, Mic, Play, Award, TrendingUp } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 
 const AboutSection = () => {
@@ -12,7 +11,7 @@ const AboutSection = () => {
 
   const stats = [
     { number: "1,247+", label: "Entrepreneurs Coached", icon: Users },
-    { number: "312%", label: "Avg. Engagement Increase", icon: BarChart3 },
+    { number: "312%", label: "Avg. Engagement Increase", icon: TrendingUp },
     { number: "50+", label: "Speaking Events", icon: Mic }
   ];
 
@@ -115,8 +114,8 @@ const AboutSection = () => {
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center p-6 bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-sm border border-gray-600">
-              <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="h-8 w-8 text-chemist-orange" />
+              <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="h-8 w-8 text-white" />
               </div>
               <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
               <div className="text-gray-300">{stat.label}</div>
@@ -134,8 +133,8 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <achievement.icon className="text-chemist-orange h-8 w-8" />
+                <div className="w-16 h-16 bg-chemist-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                  <achievement.icon className="text-white h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-white">{achievement.title}</h3>
                 <p className="text-gray-300">{achievement.description}</p>
