@@ -51,7 +51,9 @@ const HeroSection = () => {
               <RouterLink to="/assessment" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">
                 FREE Personalized Content Plan →
               </RouterLink>
-              <button className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg w-full sm:w-auto">Find Your Program</button>
+              <RouterLink to="/services" className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg w-full sm:w-auto text-center">
+                Find Your Program
+              </RouterLink>
             </div>
 
             {/* Stats Section */}

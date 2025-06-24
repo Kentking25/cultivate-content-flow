@@ -76,7 +76,7 @@ const Navigation = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-white focus:outline-none z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -93,14 +93,14 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-chemist-black shadow-md py-4 px-6 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-chemist-black shadow-md py-4 px-6 animate-fade-in z-40">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
               item.isRouter ? (
                 <RouterLink
                   key={item.name}
                   to={item.target}
-                  className="nav-item font-medium text-white hover:text-chemist-orange"
+                  className="nav-item font-medium text-white hover:text-chemist-orange py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -112,7 +112,7 @@ const Navigation = () => {
                   spy={true}
                   smooth={true}
                   duration={800}
-                  className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer"
+                  className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
