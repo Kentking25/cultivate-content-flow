@@ -97,10 +97,13 @@ const ServicesOfferedSection = () => {
     triggerOnce: false,
     threshold: 0.1
   });
+
   const contentAssessmentFeatures = ["Comprehensive content audit and analysis", "Identify what's blocking your content growth", "Personalized recommendations and action plan", "One-on-one strategy session with Kent", "Written report with specific next steps"];
   const cohortFeatures = ["Small group coaching (max 10 people)", "Weekly 90-minute group calls", "Personal content formula creation", "Lifetime community access", "90-day implementation roadmap", "Peer support and accountability"];
   const catalystFeatures = ["12 personal strategy sessions", "Daily Voxer access (M-F)", "Complete brand overhaul", "6 months implementation support", "Custom content framework"];
-  return <section id="programs" className="section bg-gray-50" ref={ref}>
+
+  return (
+    <section id="programs" className="section bg-gray-50" ref={ref}>
       <div className="container-content">
         <motion.div initial={{
         opacity: 0,
@@ -122,22 +125,54 @@ const ServicesOfferedSection = () => {
 
         {/* Service Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          <ServiceCard title="Content Assessment" subtitle="Find what's blocking you" description="Get clear on exactly what's preventing your content from converting with a comprehensive audit." features={contentAssessmentFeatures} programDetails={{
-          duration: "2-3 Mins",
-          format: "1:1 assessment + report"
-        }} icon={Search} delay={0} buttonText="Get Assessment" linkTo="/assessment" />
+          <ServiceCard 
+            title="Content Assessment" 
+            subtitle="Find what's blocking you" 
+            description="Get clear on exactly what's preventing your content from converting with a comprehensive audit." 
+            features={contentAssessmentFeatures} 
+            programDetails={{
+              duration: "2-3 Mins",
+              format: "1:1 assessment + report"
+            }} 
+            icon={Search} 
+            delay={0} 
+            buttonText="Get Assessment" 
+            linkTo="/assessment" 
+          />
           
-          <ServiceCard title="Content Chemistry Cohort" subtitle="Transform with a supportive group" description="7-week intensive program with weekly calls, personalized formulas, and lifetime community access." features={cohortFeatures} programDetails={{
-          duration: "7 weeks + lifetime access",
-          format: "Small group coaching"
-        }} icon={Users} delay={0.2} buttonText="Apply for Cohort" linkTo="/services/content-cohort/apply" />
+          <ServiceCard 
+            title="Content Chemistry Cohort" 
+            subtitle="Transform with a supportive group" 
+            description="7-week intensive program with weekly calls, personalized formulas, and lifetime community access." 
+            features={cohortFeatures} 
+            programDetails={{
+              duration: "7 weeks + lifetime access",
+              format: "Small group coaching"
+            }} 
+            icon={Users} 
+            delay={0.2} 
+            buttonText="Apply for Cohort" 
+            linkTo="/services/content-cohort/apply" 
+          />
           
-          <ServiceCard title="The Brand Catalyst" subtitle="Personalized 1:1 transformation" description="90 days of intensive 1:1 work with daily support to completely transform your content and brand." features={catalystFeatures} programDetails={{
-          duration: "90 days + 6 months support",
-          format: "1:1 personalized"
-        }} icon={TrendingUp} delay={0.4} buttonText="Learn More" linkTo="/services/brand-catalyst" />
+          <ServiceCard 
+            title="The Brand Catalyst" 
+            subtitle="Personalized 1:1 transformation" 
+            description="90 days of intensive 1:1 work with daily support to completely transform your content and brand." 
+            features={catalystFeatures} 
+            programDetails={{
+              duration: "90 days + 6 months support",
+              format: "1:1 personalized"
+            }} 
+            icon={TrendingUp} 
+            delay={0.4} 
+            buttonText="Apply Now" 
+            linkTo="/services/brand-catalyst/apply" 
+          />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ServicesOfferedSection;

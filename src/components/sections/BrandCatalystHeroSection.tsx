@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const BrandCatalystHeroSection = () => {
   const [ref, inView] = useInView({
@@ -57,7 +58,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">12</div>
               <div className="text-gray-300">Strategy Sessions</div>
-            </motion.div>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -67,7 +68,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">Daily</div>
               <div className="text-gray-300">Voxer Access</div>
-            </motion.div>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -77,7 +78,7 @@ const BrandCatalystHeroSection = () => {
             >
               <div className="text-3xl md:text-4xl font-bold text-chemist-orange mb-2">5-6</div>
               <div className="text-gray-300">People Only</div>
-            </motion.div>
+            </div>
           </div>
 
           <motion.div
@@ -86,12 +87,12 @@ const BrandCatalystHeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12"
           >
-            <a
-              href="/contact"
+            <Link
+              to="/services/brand-catalyst/apply"
               className="btn-primary text-xl px-8 py-4 inline-block"
             >
               Apply for The Brand Catalyst →
-            </a>
+            </Link>
             <p className="text-gray-400 mt-4">
               Only 5-6 people at a time • Start within 1-2 weeks of acceptance
             </p>

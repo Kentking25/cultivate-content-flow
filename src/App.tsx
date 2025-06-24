@@ -10,6 +10,7 @@ import ContentCohort from './pages/ContentCohort';
 import BrandCatalyst from './pages/BrandCatalyst';
 import Assessment from './pages/Assessment';
 import CohortApplication from './pages/CohortApplication';
+import BrandCatalystApplication from './pages/BrandCatalystApplication';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/services/content-cohort" element={<ContentCohort />} />
           <Route path="/services/content-cohort/apply" element={<CohortApplication />} />
           <Route path="/services/brand-catalyst" element={<BrandCatalyst />} />
+          <Route path="/services/brand-catalyst/apply" element={<BrandCatalystApplication />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

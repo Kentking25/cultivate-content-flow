@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const BrandCatalystCTASection = () => {
   const [ref, inView] = useInView({
@@ -22,12 +23,12 @@ const BrandCatalystCTASection = () => {
           </h2>
 
           <div className="mt-12">
-            <a
-              href="/contact"
+            <Link
+              to="/services/brand-catalyst/apply"
               className="bg-chemist-black text-white px-12 py-6 rounded-2xl text-xl font-semibold hover:bg-gray-800 transition-colors inline-block"
             >
               Apply for The Brand Catalyst →
-            </a>
+            </Link>
             <p className="text-gray-600 mt-6">
               Only 5-6 spots available • Next start: Within 1-2 weeks
             </p>
