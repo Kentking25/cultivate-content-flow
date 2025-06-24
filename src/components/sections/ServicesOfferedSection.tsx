@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Search, Users, TrendingUp, CheckCircle, Clock, MessageCircle } from 'lucide-react';
@@ -150,7 +151,7 @@ const ServicesOfferedSection = () => {
             description="Get clear on exactly what's preventing your content from converting with a comprehensive audit."
             features={contentAssessmentFeatures}
             programDetails={{
-              duration: "1-2 weeks",
+              duration: "2-3 Mins",
               format: "1:1 assessment + report"
             }}
             icon={Search}
