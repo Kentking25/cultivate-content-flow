@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FlaskConical, TestTube, Beaker, Atom } from 'lucide-react';
+import { FlaskConical, TestTube, Beaker, Atom, Play, Award, Users } from 'lucide-react';
 
 export const Bubble = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
@@ -82,36 +82,31 @@ export const FormulaDiagram = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <div className="border-2 border-chemist-orange rounded-lg p-6 bg-chemist-black bg-opacity-90 text-white">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-darkgray p-4">
-              <Atom className="text-chemist-orange h-8 w-8" />
+      <div className="border-2 border-chemist-orange rounded-lg p-8 bg-chemist-black bg-opacity-90 text-white">
+        <div className="space-y-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Play className="text-chemist-orange h-8 w-8" />
             </div>
-            <p className="mt-2 font-medium">Platform Science</p>
+            <h3 className="text-xl font-bold mb-2">Podcast Appearances</h3>
+            <p className="text-gray-300">Featured on 20+ top marketing podcasts</p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-darkgray p-4">
-              <TestTube className="text-chemist-orange h-8 w-8" />
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="text-chemist-orange h-8 w-8" />
             </div>
-            <p className="mt-2 font-medium">Behavioral Psychology</p>
+            <h3 className="text-xl font-bold mb-2">Industry Recognition</h3>
+            <p className="text-gray-300">Award-winning content strategies</p>
           </div>
-          <div className="flex flex-col items-center text-center">
-            <div className="rounded-full bg-chemist-darkgray p-4">
-              <FlaskConical className="text-chemist-orange h-8 w-8" />
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="text-chemist-orange h-8 w-8" />
             </div>
-            <p className="mt-2 font-medium">Fearless Creativity</p>
+            <h3 className="text-xl font-bold mb-2">Community Access</h3>
+            <p className="text-gray-300">Join 1,200+ content creators</p>
           </div>
-        </div>
-        <div className="flex justify-center mt-8">
-          <div className="flex items-center">
-            <div className="h-12 w-1 bg-chemist-orange"></div>
-            <div className="h-1 w-16 bg-chemist-orange"></div>
-            <div className="h-1 w-16 bg-chemist-orange"></div>
-          </div>
-        </div>
-        <div className="mt-8 text-center bg-chemist-orange text-white p-4 rounded-md">
-          <p className="font-bold text-lg">Repeatable Content Formulas</p>
         </div>
       </div>
     </motion.div>
