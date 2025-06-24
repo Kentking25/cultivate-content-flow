@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
@@ -6,9 +7,26 @@ import { LabBackground } from '../components/ChemistryElements';
 const BrandCatalystApplication = () => {
   useEffect(() => {
     // Initialize HoneyBook script
-    if (window._HB_) {
-      window._HB_.pid = '674cda08cfb7ec0019542bee';
-    }
+    const loadHoneyBookScript = () => {
+      if (window._HB_) {
+        window._HB_.pid = '674cda08cfb7ec0019542bee';
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js';
+      
+      script.onload = () => {
+        window._HB_ = window._HB_ || {};
+        window._HB_.pid = '674cda08cfb7ec0019542bee';
+      };
+      
+      document.head.appendChild(script);
+    };
+
+    loadHoneyBookScript();
   }, []);
 
   return (
@@ -123,14 +141,17 @@ const BrandCatalystApplication = () => {
 
           {/* HoneyBook Form */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="hb-p-674cda08cfb7ec0019542bee-4"></div>
-            <img 
-              height="1" 
-              width="1" 
-              style={{ display: 'none' }} 
-              src="https://www.honeybook.com/p.png?pid=674cda08cfb7ec0019542bee" 
-              alt=""
-            />
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">Apply for The Brand Catalyst</h3>
+              <div className="hb-p-674cda08cfb7ec0019542bee-4"></div>
+              <img 
+                height="1" 
+                width="1" 
+                style={{ display: 'none' }} 
+                src="https://www.honeybook.com/p.png?pid=674cda08cfb7ec0019542bee" 
+                alt=""
+              />
+            </div>
           </div>
 
           {/* FAQ Section */}
@@ -209,22 +230,6 @@ const BrandCatalystApplication = () => {
           </div>
 
           {/* Final CTA Section */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-chemist-orange text-white rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Extremely Limited Spots</h2>
-              <p className="text-xl mb-8">
-                I only take 5-6 Brand Catalyst clients at a time because of the unlimited Voxer support.
-              </p>
-              
-              <div className="bg-white bg-opacity-20 rounded-xl p-6 max-w-md mx-auto mb-8">
-                <h3 className="text-2xl font-bold mb-4">Current Availability:</h3>
-                <div className="text-4xl font-bold mb-4">2 spots remaining</div>
-                <p className="text-lg">Next Start Date: Within 1-2 weeks</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Stop Blending In Section */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8">
               Stop Blending In. Start Standing Out.
@@ -239,19 +244,6 @@ const BrandCatalystApplication = () => {
           </div>
         </div>
       </div>
-
-      {/* HoneyBook Script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(h,b,s,n,i,p,e,t) {
-              h._HB_ = h._HB_ || {};h._HB_.pid = i;;;;
-              t=b.createElement(s);t.type="text/javascript";t.async=!0;t.src=n;
-              e=b.getElementsByTagName(s)[0];e.parentNode.insertBefore(t,e);
-            })(window,document,"script","https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js","674cda08cfb7ec0019542bee");
-          `
-        }}
-      />
     </div>
   );
 };
