@@ -57,7 +57,7 @@ const CohortCTASection = () => {
           
           <div className="space-y-4 mb-8">
             <Link
-              to="/contact"
+              to="/assessment"
               className="bg-chemist-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 inline-block text-xl"
             >
               Apply for Content Chemistry Cohort →

@@ -3,8 +3,6 @@ import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
 import Footer from '../components/Footer';
 import { LabBackground } from '../components/ChemistryElements';
-import ContentBlockingSection from '../components/sections/ContentBlockingSection';
-import ContentMasterySection from '../components/sections/ContentMasterySection';
 import ServicesOfferedSection from '../components/sections/ServicesOfferedSection';
 
 const Services = () => {
@@ -15,8 +13,6 @@ const Services = () => {
       <LabBackground />
       
       <div className="pt-20">
-        <ContentBlockingSection />
-        <ContentMasterySection />
         <ServicesOfferedSection />
       </div>
       
