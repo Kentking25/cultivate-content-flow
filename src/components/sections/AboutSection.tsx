@@ -50,7 +50,7 @@ const AboutSection = () => {
           </a>
         </motion.div>
 
-        {/* Updated From Hollywood Sets to Content Strategy section */}
+        {/* Updated Meet Kent section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -58,22 +58,35 @@ const AboutSection = () => {
           className="mb-16"
         >
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 border border-gray-600">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              From Hollywood Sets to Content Strategy
-            </h2>
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-chemist-orange flex-shrink-0">
+                <img
+                  src="/lovable-uploads/ce264413-0c4c-4b15-90a9-0d40672de7af.png"
+                  alt="Kent King"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                Meet Kent
+              </h2>
+            </div>
             
             <div className="space-y-6 text-lg text-gray-300 mb-8">
               <p>
-                I've been in front of cameras since I was a kid – major commercials, TV shows, working with brands you definitely know. But here's what most people don't realize: <strong className="text-white">the same principles that make compelling entertainment make compelling content.</strong>
+                Most people try to figure out content on their own. They post randomly, hope for the best, and wonder why nothing sticks.
               </p>
               
               <p>
-                The Content Chemistry method combines my entertainment industry background with proven marketing psychology. No fluff, no generic advice – just your personalized formula for content that converts.
+                Here's the thing: <strong className="text-white">great content isn't about luck—it's about chemistry.</strong>
+              </p>
+              
+              <p>
+                I've spent years in entertainment (yeah, I was a kid actor), then DJing and event production, and now helping entrepreneurs and creators build authority through strategic content.
               </p>
               
               <div className="bg-chemist-orange bg-opacity-20 border-l-4 border-chemist-orange p-4 rounded-r-lg mt-6">
                 <p className="text-white italic">
-                  "I learned more about attention and storytelling in one day on a Hollywood set than most people learn in years of marketing courses."
+                  "Content Chemistry isn't just another strategy—it's your personalized formula for content that converts."
                 </p>
               </div>
             </div>
