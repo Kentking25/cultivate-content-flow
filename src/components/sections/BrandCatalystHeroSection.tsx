@@ -1,7 +1,6 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
 
 const BrandCatalystHeroSection = () => {
   const [ref, inView] = useInView({
@@ -87,12 +86,14 @@ const BrandCatalystHeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12"
           >
-            <Link
-              to="/services/brand-catalyst/apply"
+            <a
+              href="https://elementtheagency.hbportal.co/public/685b1f5a594f9a0025716888"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-xl px-8 py-4 inline-block"
             >
               Apply for The Brand Catalyst →
-            </Link>
+            </a>
             <p className="text-gray-400 mt-4">
               Only 5-6 people at a time • Start within 1-2 weeks of acceptance
             </p>
