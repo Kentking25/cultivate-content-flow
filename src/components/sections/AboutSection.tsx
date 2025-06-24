@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Users, BarChart3, Mic } from 'lucide-react';
+import { Users, BarChart3, Mic, Play, Award } from 'lucide-react';
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -15,8 +15,26 @@ const AboutSection = () => {
     { number: "50+", label: "Speaking Events", icon: Mic }
   ];
 
+  const achievements = [
+    { 
+      icon: Play, 
+      title: "Podcast Appearances", 
+      description: "Featured on 20+ top marketing podcasts" 
+    },
+    { 
+      icon: Award, 
+      title: "Industry Recognition", 
+      description: "Award-winning content strategies" 
+    },
+    { 
+      icon: Users, 
+      title: "Community Access", 
+      description: "Join 1,200+ content creators" 
+    }
+  ];
+
   return (
-    <section id="about" className="section bg-gradient-to-b from-chemist-black via-gray-900 to-chemist-white relative" ref={ref}>
+    <section id="about" className="section bg-gradient-to-b from-chemist-black via-chemist-darkgray to-chemist-white relative" ref={ref}>
       <div className="container-content">
         {/* Ready to work section */}
         <motion.div
@@ -108,58 +126,23 @@ const AboutSection = () => {
           ))}
         </motion.div>
 
-        {/* Entertainment Industry Background Section */}
+        {/* Achievements Section - Podcast Appearances Style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 border border-gray-600 mb-16"
+          className="bg-chemist-black bg-opacity-90 backdrop-blur-md rounded-2xl p-8 border border-chemist-orange mb-16"
         >
-          <h3 className="text-3xl font-bold text-white mb-6 text-center">Entertainment Industry Background</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xl font-bold text-chemist-orange mb-4 flex items-center gap-2">
-                <span>🎬</span> Notable Appearances
-              </h4>
-              <div className="space-y-4">
-                <div>
-                  <h5 className="font-bold text-white">Losing Isaiah (1995)</h5>
-                  <p className="text-gray-300">Feature film with Halle Berry</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <achievement.icon className="text-chemist-orange h-8 w-8" />
                 </div>
-                <div>
-                  <h5 className="font-bold text-white">Reebok Commercial</h5>
-                  <p className="text-gray-300">National television campaign</p>
-                </div>
-                <div>
-                  <h5 className="font-bold text-white">Sprite Commercial with Nas</h5>
-                  <p className="text-gray-300">Hip-hop culture collaboration</p>
-                </div>
-                <div>
-                  <h5 className="font-bold text-white">Scholastic & Hasbro</h5>
-                  <p className="text-gray-300">Educational and toy brand campaigns</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2 text-white">{achievement.title}</h3>
+                <p className="text-gray-300">{achievement.description}</p>
               </div>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold text-chemist-orange mb-4 flex items-center gap-2">
-                <span>⭐</span> Why This Matters
-              </h4>
-              <p className="text-gray-300 mb-4">
-                These early experiences in professional media production gave me an insider's understanding of:
-              </p>
-              <ul className="space-y-2 text-gray-300">
-                <li>• What captures and holds attention</li>
-                <li>• How stories are structured for maximum impact</li>
-                <li>• The psychology behind compelling content</li>
-                <li>• Performance dynamics that translate on camera</li>
-                <li>• Production value that makes content stand out</li>
-              </ul>
-              <p className="text-gray-300 mt-4 font-medium">
-                Skills that directly translate to today's digital marketing landscape.
-              </p>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>
