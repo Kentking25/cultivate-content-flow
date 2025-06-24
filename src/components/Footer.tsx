@@ -1,4 +1,3 @@
-
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
@@ -38,9 +37,9 @@ const Footer = () => {
             <Link to="/contact" className="btn-primary text-lg px-8 py-4">
               Take Free Assessment →
             </Link>
-            <a href="/#services" className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg">
+            <Link to="/services" className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg">
               View Programs →
-            </a>
+            </Link>
           </div>
         </motion.div>
 
@@ -70,7 +69,7 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Kent</Link></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/about#speaking" className="text-gray-400 hover:text-white transition-colors">Speaking</Link></li>
               <li><a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">SOS Club</a></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
