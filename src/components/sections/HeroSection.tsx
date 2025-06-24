@@ -39,9 +39,7 @@ const HeroSection = () => {
               <span className="text-chemist-orange">Income-<br />Replacing<br />Content</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed">
-              Get the exact step-by-step system that helped entrepreneurs grow to 90K followers and hit #1 on Amazon. Finally know exactly what to post with a proven game plan.
-            </p>
+            <p className="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed">Get your personalized content formula that generates business results (not just vanity metrics). Built for successful entrepreneurs tired of generic templates and cultural disconnects.</p>
             
             <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
               <RouterLink to="/contact" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">
