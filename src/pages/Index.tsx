@@ -48,6 +48,8 @@ const Index = () => {
       
       <div className="snap-container">
         <HeroSection />
+        <ProblemSection />
+        <MethodSection />
         <AboutSection />
         <ServicesSection />
         <SocialProofSection />
