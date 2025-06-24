@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { cn } from '@/lib/utils';
@@ -24,7 +25,7 @@ const Navigation = () => {
     };
   }, []);
 
-  // Create nav items based on current location
+  // Nav items for hamburger menu
   const navItems = [
     { 
       name: 'Home', 
@@ -37,7 +38,7 @@ const Navigation = () => {
       isRouter: true 
     },
     { 
-      name: 'Services', 
+      name: 'Programs', 
       target: '/services', 
       isRouter: true 
     }
@@ -64,31 +65,9 @@ const Navigation = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8 items-center">
-          {navItems.map((item) => (
-            item.isRouter ? (
-              <RouterLink
-                key={item.name}
-                to={item.target}
-                className="nav-item font-medium text-white hover:text-chemist-orange"
-              >
-                {item.name}
-              </RouterLink>
-            ) : (
-              <Link
-                key={item.name}
-                to={item.target}
-                spy={true}
-                smooth={true}
-                duration={800}
-                className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer"
-              >
-                {item.name}
-              </Link>
-            )
-          ))}
+        <div className="hidden md:flex items-center">
           <RouterLink
-            to="/contact"
+            to="/assessment"
             className="btn-primary"
           >
             Free Game Plan
@@ -141,7 +120,7 @@ const Navigation = () => {
               )
             ))}
             <RouterLink
-              to="/contact"
+              to="/assessment"
               className="btn-primary text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
