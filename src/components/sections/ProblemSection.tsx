@@ -12,6 +12,11 @@ const ProblemSection = () => {
 
   const problems = [
     {
+      icon: Lock,
+      title: "You've tried the Guru's and Experts",
+      description: "The courses you bought, videos you watched, and templates you downloaded are too generic and dont match your brand"
+    },
+    {
       icon: AlertTriangle,
       title: "Posting Without Strategy",
       description: "You're creating content but have no idea if it will actually work or connect with your audience."
@@ -25,11 +30,6 @@ const ProblemSection = () => {
       icon: DollarSign,
       title: "No Clear ROI",
       description: "You're spending time on content but can't see how it translates to actual income."
-    },
-    {
-      icon: Lock,
-      title: "You've tried the Guru's and Experts",
-      description: "The courses you bought, videos you watched, and templates you downloaded are too generic and dont match your brand"
     }
   ];
 
@@ -42,7 +42,7 @@ const ProblemSection = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-16">
-            <p className="text-2xl md:text-3xl font-script italic text-chemist-orange mb-4">
+            <p className="text-xl md:text-2xl font-script italic text-chemist-orange mb-4">
               Let me guess...
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
