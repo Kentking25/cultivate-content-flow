@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ScrollSection from '../ScrollSection';
@@ -41,8 +40,7 @@ const ProblemSection = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16">
-            You Know You Have Valuable Expertise,<br />
-            But...
+            Let me Guess... You've had success in your career but struggling with content (and its costing you opportunities)
           </h2>
         </motion.div>
 
