@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ScrollSection from '../ScrollSection';
@@ -39,9 +40,14 @@ const ProblemSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16">
-            Let me Guess... You've had success in your career but struggling with content (and its costing you opportunities)
-          </h2>
+          <div className="mb-16">
+            <p className="text-2xl md:text-3xl font-script italic text-chemist-orange mb-4">
+              Let me guess...
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              You've had success in your career but struggling with content (and its costing you opportunities)
+            </h2>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">

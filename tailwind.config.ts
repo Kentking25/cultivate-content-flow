@@ -76,6 +76,7 @@ export default {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 				'satoshi': ['Satoshi', 'sans-serif'],
+				'script': ['Dancing Script', 'Brush Script MT', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
