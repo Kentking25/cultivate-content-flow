@@ -23,9 +23,7 @@ const ThreeWaysSection = () => {
       }} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Three Ways to Master Your
 Content</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the approach that matches your current needs and timeline.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Whether you're just starting or ready to scale, choose the approach that matches your current needs and timeline.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
