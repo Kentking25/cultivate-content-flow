@@ -185,8 +185,8 @@ const ServicesOfferedSection = () => {
             }}
             icon={TrendingUp}
             delay={0.4}
-            buttonText="Apply for Catalyst"
-            linkTo="/contact"
+            buttonText="Learn More"
+            linkTo="/services/brand-catalyst"
           />
         </div>
       </div>

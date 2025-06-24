@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import { Toaster } from '@/components/ui/toaster';
 import Services from './pages/Services';
 import ContentCohort from './pages/ContentCohort';
+import BrandCatalyst from './pages/BrandCatalyst';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/content-cohort" element={<ContentCohort />} />
+          <Route path="/services/brand-catalyst" element={<BrandCatalyst />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
