@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-scroll';
@@ -6,11 +5,8 @@ import { Link as RouterLink } from 'react-router-dom';
 import { FloatingBeaker } from '../ChemistryElements';
 import { Check } from 'lucide-react';
 
-// Advanced DNA Helix animation component inspired by the reference image
-const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
-  // Number of rungs in the DNA ladder
-  const rungs = 12;
-  
+// DNA Helix image component
+const DNAHelixImage = ({ size, delay, top, left }: { size: number, delay: number, top: string, left: string }) => {
   return (
     <motion.div
       className="absolute"
@@ -19,68 +15,24 @@ const DNAHelix = ({ size, delay, top, left }: { size: number, delay: number, top
       animate={{ 
         opacity: [0.6, 0.8, 0.6], 
         scale: [1, 1.05, 1],
+        rotate: [0, 360]
       }}
       transition={{ 
-        duration: 10,
-        delay,
-        repeat: Infinity,
-        repeatType: "loop"
+        opacity: { duration: 10, delay, repeat: Infinity, repeatType: "loop" },
+        scale: { duration: 10, delay, repeat: Infinity, repeatType: "loop" },
+        rotate: { duration: 15, repeat: Infinity, ease: "linear" }
       }}
     >
-      <div className="dna-container" style={{ width: size, height: size * 2 }}>
-        <motion.div 
-          className="dna-helix"
-          animate={{ rotateY: [0, 360] }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          {/* Left strand */}
-          <div className="dna-strand dna-strand-left">
-            {Array(rungs).fill(0).map((_, i) => (
-              <div 
-                key={`left-${i}`}
-                className="dna-segment"
-                style={{
-                  top: `${(i / rungs) * 100}%`,
-                  left: `${Math.sin((i / rungs) * Math.PI * 2) * 50 + 50}%`,
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Right strand */}
-          <div className="dna-strand dna-strand-right">
-            {Array(rungs).fill(0).map((_, i) => (
-              <div 
-                key={`right-${i}`}
-                className="dna-segment"
-                style={{
-                  top: `${(i / rungs) * 100}%`,
-                  left: `${Math.sin(((i / rungs) * Math.PI * 2) + Math.PI) * 50 + 50}%`,
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Connecting rungs */}
-          {Array(rungs).fill(0).map((_, i) => (
-            <div 
-              key={`rung-${i}`}
-              className="dna-rung"
-              style={{
-                top: `${(i / rungs) * 100}%`,
-                transform: `rotate(${Math.sin((i / rungs) * Math.PI * 2) * 90}deg)`,
-              }}
-            />
-          ))}
-          
-          {/* Glow effect */}
-          <div className="dna-glow"></div>
-        </motion.div>
-      </div>
+      <img 
+        src="/lovable-uploads/98e50451-66bd-45a2-9971-8f50ef236fd4.png" 
+        alt="DNA Helix" 
+        style={{ 
+          width: size, 
+          height: size * 2,
+          filter: 'drop-shadow(0 0 20px rgba(255, 107, 53, 0.3))'
+        }}
+        className="object-contain"
+      />
     </motion.div>
   );
 };
@@ -94,11 +46,11 @@ const HeroSection = () => {
   return (
     <section id="hero" className="section bg-chemist-black text-white relative overflow-hidden" ref={ref}>
       {/* DNA Helix background with different sizes and positions */}
-      <DNAHelix size={120} delay={0} top="10%" left="10%" />
-      <DNAHelix size={80} delay={1.5} top="60%" left="5%" />
-      <DNAHelix size={160} delay={0.5} top="30%" left="75%" />
-      <DNAHelix size={100} delay={2} top="70%" left="80%" />
-      <DNAHelix size={60} delay={3} top="20%" left="50%" />
+      <DNAHelixImage size={120} delay={0} top="10%" left="10%" />
+      <DNAHelixImage size={80} delay={1.5} top="60%" left="5%" />
+      <DNAHelixImage size={160} delay={0.5} top="30%" left="75%" />
+      <DNAHelixImage size={100} delay={2} top="70%" left="80%" />
+      <DNAHelixImage size={60} delay={3} top="20%" left="50%" />
       
       {/* Grid background to match reference image */}
       <div className="grid-background"></div>
