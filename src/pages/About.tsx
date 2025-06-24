@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
 import Footer from '../components/Footer';
-import { FormulaDiagram } from '../components/ChemistryElements';
+import ContactSection from '../components/sections/ContactSection';
 import { Atom, FlaskConical, TestTube } from 'lucide-react';
 
 const SpeakingSection = () => {
@@ -118,22 +118,22 @@ const FullBioSection = () => {
             
             <div className="space-y-6 text-gray-300 mt-6">
               <p>
-                Kent King began his creative journey as a child actor, appearing in commercials and developing an early understanding of media production. This foundation would later become instrumental in his approach to content strategy.
+                I started as a kid actor, appearing in major productions like Losing Isaiah alongside Halle Berry, plus commercials for Reebok, Sprite with Nas, and print campaigns for Scholastic and Hasbro. That's where I first fell in love with how media works and what makes content stick.
               </p>
               <p>
-                After transitioning through a successful career as a DJ and event producer, Kent found his passion at the intersection of storytelling, psychology, and data-driven marketing. He realized that the most successful content wasn't random—it followed specific patterns and formulas.
+                Then I became a DJ and event producer (yeah, I know - weird career path, right?). But here's what all those experiences taught me: there's actually a science to getting people's attention and keeping it.
               </p>
               <p>
-                Today, Kent leads Element The Agency, working with DTC brands, thought leaders, and creators to transform their content marketing through what he calls "Content Chemistry"—the perfect blend of platform science, behavioral psychology, and fearless creativity.
+                Content isn't random. The stuff that works follows specific patterns.
               </p>
               <p>
-                His systems-based approach has helped clients achieve remarkable results: increasing engagement by 300%, doubling conversion rates, and building authentic personal brands that stand out in crowded markets.
+                Today, I run Element The Agency and created something I call Content Chemistry. It's basically the perfect mix of understanding how platforms work, what makes people tick, and being bold enough to try new things.
               </p>
               <p>
-                As the founder of the SOS (Success On Social) Club community, Kent is on a mission to democratize access to high-quality content marketing education, helping more entrepreneurs and creators connect authentically with their audiences.
+                My clients? They've seen some pretty amazing results. Olive Gift Co saw a 657% sales increase without raising their ad budget. Marie Daniels landed her book at #1 on Amazon without having a huge following. Briwoo gained 90,000 followers in 6 months and landed brand deals worth tens of thousands.
               </p>
               <p>
-                When he's not formulating content strategies, Kent can be found mixing music, exploring new AI tools, or mentoring the next generation of digital marketers.
+                When I'm not helping people build their authority, you'll probably find me mixing music, playing with new AI tools, or mentoring the next generation of marketers on how this all works.
               </p>
             </div>
           </motion.div>
@@ -145,7 +145,7 @@ const FullBioSection = () => {
             className="flex justify-center relative"
           >
             <div className="relative">
-              <div className="w-full max-w-md rounded-lg overflow-hidden border-4 border-chemist-orange">
+              <div className="w-full max-w-md rounded-2xl overflow-hidden border-4 border-chemist-orange">
                 <img
                   src="/lovable-uploads/ce264413-0c4c-4b15-90a9-0d40672de7af.png"
                   alt="Kent King - The Content Chemist"
@@ -165,8 +165,6 @@ const FullBioSection = () => {
                 <FlaskConical className="h-8 w-8 text-chemist-orange" />
               </div>
             </div>
-            
-            <FormulaDiagram />
           </motion.div>
         </div>
       </div>
@@ -188,6 +186,7 @@ const About = () => {
       <div className="pt-24">
         <FullBioSection />
         <SpeakingSection />
+        <ContactSection />
       </div>
       
       <Footer />

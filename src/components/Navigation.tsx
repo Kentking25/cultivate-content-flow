@@ -92,7 +92,7 @@ const Navigation = () => {
             to="/contact"
             className="btn-primary"
           >
-            Let's Work
+            Free Game Plan
           </RouterLink>
         </div>
 
@@ -146,7 +146,7 @@ const Navigation = () => {
               className="btn-primary text-center mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Let's Work
+              Free Game Plan
             </RouterLink>
           </div>
         </div>

@@ -127,10 +127,10 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
-              <RouterLink to="/contact" className="btn-primary text-lg px-8 py-4">
-                Get Your Content Game Plan →
+              <RouterLink to="/contact" className="btn-primary text-lg px-8 py-4 w-full sm:w-auto text-center">
+                FREE Personalized Content Plan →
               </RouterLink>
-              <button className="text-white border border-gray-600 px-6 py-3 rounded-md font-medium hover:border-chemist-orange transition-colors">
+              <button className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg w-full sm:w-auto">
                 Book Free Assessment
               </button>
             </div>

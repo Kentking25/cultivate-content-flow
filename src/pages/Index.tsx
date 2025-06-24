@@ -9,10 +9,7 @@ import ContentOptionsSection from '../components/sections/ContentOptionsSection'
 import AboutSection from '../components/sections/AboutSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import SocialProofSection from '../components/sections/SocialProofSection';
-import ServicesLibrarySection from '../components/sections/ServicesLibrarySection';
-import SpeakingSection from '../components/sections/SpeakingSection';
 import ResourcesSection from '../components/sections/ResourcesSection';
-import ContactSection from '../components/sections/ContactSection';
 import Footer from '../components/Footer';
 import { LabBackground } from '../components/ChemistryElements';
 import { useToast } from '@/hooks/use-toast';
@@ -57,10 +54,7 @@ const Index = () => {
         <AboutSection />
         <ServicesSection />
         <SocialProofSection />
-        <ServicesLibrarySection />
-        <SpeakingSection />
         <ResourcesSection />
-        <ContactSection />
       </div>
       
       <Footer />

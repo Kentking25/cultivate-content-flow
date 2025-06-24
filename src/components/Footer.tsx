@@ -18,13 +18,37 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-chemist-black text-white py-12" ref={ref}>
+    <footer className="bg-chemist-darkgray text-white py-16" ref={ref}>
       <div className="container-content">
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Transform Your Content Strategy?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Let's apply Content Chemistry to your personal brand and start building authority that generates real opportunities.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/contact" className="btn-primary text-lg px-8 py-4">
+              Take Free Assessment →
+            </Link>
+            <a href="/#services" className="text-white border border-gray-600 px-8 py-4 rounded-md font-medium hover:border-chemist-orange transition-colors text-lg">
+              View Programs →
+            </a>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-8"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-16 border-t border-gray-700"
         >
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
@@ -76,11 +100,9 @@ const Footer = () => {
                 className="text-gray-400 hover:text-white transition-colors"
                 title="TikTok"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-music">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
+                <div className="w-6 h-6 flex items-center justify-center font-bold text-lg">
+                  T
+                </div>
               </a>
             </div>
             <div>
