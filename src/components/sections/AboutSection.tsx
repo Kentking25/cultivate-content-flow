@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users, BarChart3, Mic, Play, Award } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -49,64 +50,44 @@ const AboutSection = () => {
           </a>
         </motion.div>
 
-        {/* Main content grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
-          {/* Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="order-2 lg:order-1"
-          >
+        {/* Updated From Hollywood Sets to Content Strategy section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 border border-gray-600">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
               From Hollywood Sets to Content Strategy
             </h2>
             
             <div className="space-y-6 text-lg text-gray-300 mb-8">
               <p>
-                I started as a kid actor, appearing in major productions like Losing Isaiah alongside Halle Berry, plus commercials for Reebok, Sprite with Nas, and print campaigns for Scholastic and Hasbro. That's where I first fell in love with how media works and what makes content stick.
+                I've been in front of cameras since I was a kid – major commercials, TV shows, working with brands you definitely know. But here's what most people don't realize: <strong className="text-white">the same principles that make compelling entertainment make compelling content.</strong>
               </p>
               
               <p>
-                Then I became a DJ and event producer (yeah, I know - weird career path, right?). But here's what all those experiences taught me: there's actually a science to getting people's attention and keeping it.
+                The Content Chemistry method combines my entertainment industry background with proven marketing psychology. No fluff, no generic advice – just your personalized formula for content that converts.
               </p>
               
-              <p>
-                Content isn't random. The stuff that works follows specific patterns.
-              </p>
-              
-              <p>
-                Today, I run Element The Agency and created something I call Content Chemistry. It's basically the perfect mix of understanding how platforms work, what makes people tick, and being bold enough to try new things.
-              </p>
-              
-              <p>
-                My clients? They've seen some pretty amazing results. Olive Gift Co saw a 657% sales increase without raising their ad budget. Marie Daniels landed her book at #1 on Amazon without having a huge following. Briwoo gained 90,000 followers in 6 months and landed brand deals worth tens of thousands.
-              </p>
-              
-              <p>
-                When I'm not helping people build their authority, you'll probably find me mixing music, playing with new AI tools, or mentoring the next generation of marketers on how this all works.
-              </p>
-            </div>
-          </motion.div>
-          
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-            className="order-1 lg:order-2 flex justify-center"
-          >
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-chemist-orange shadow-xl">
-                <img
-                  src="/lovable-uploads/ce264413-0c4c-4b15-90a9-0d40672de7af.png"
-                  alt="Kent King - The Content Chemist"
-                  className="w-full h-full object-cover"
-                />
+              <div className="bg-chemist-orange bg-opacity-20 border-l-4 border-chemist-orange p-4 rounded-r-lg mt-6">
+                <p className="text-white italic">
+                  "I learned more about attention and storytelling in one day on a Hollywood set than most people learn in years of marketing courses."
+                </p>
               </div>
             </div>
-          </motion.div>
-        </div>
+
+            <div className="text-center">
+              <RouterLink
+                to="/about"
+                className="btn-primary inline-block"
+              >
+                Learn More
+              </RouterLink>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Stats section */}
         <motion.div
