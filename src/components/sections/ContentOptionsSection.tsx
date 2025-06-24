@@ -58,12 +58,8 @@ const ContentOptionsSection = () => {
               </span>
             </div>
             
-            <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4 relative overflow-hidden">
-              <img 
-                src="/lovable-uploads/2eb8b4f6-d9ce-4ca6-8ae3-7d9505b1eb91.png" 
-                alt="Content Chemistry Vector" 
-                className="w-10 h-10 object-contain"
-              />
+            <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 mt-4">
+              <Users className="h-8 w-8 text-chemist-orange" />
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-4">Content Chemistry Cohort</h3>
@@ -83,7 +79,7 @@ const ContentOptionsSection = () => {
             </p>
             
             <Link 
-              to="/services/content-cohort"
+              to="/services/content-cohort/apply"
               className="w-full bg-chemist-orange hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:scale-[1.02] inline-block text-center"
             >
               Apply for Cohort →

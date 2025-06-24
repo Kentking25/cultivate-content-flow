@@ -125,12 +125,12 @@ const ServicesOfferedSection = () => {
           <ServiceCard title="Content Assessment" subtitle="Find what's blocking you" description="Get clear on exactly what's preventing your content from converting with a comprehensive audit." features={contentAssessmentFeatures} programDetails={{
           duration: "2-3 Mins",
           format: "1:1 assessment + report"
-        }} icon={Search} delay={0} buttonText="Get Assessment" linkTo="/contact" />
+        }} icon={Search} delay={0} buttonText="Get Assessment" linkTo="/assessment" />
           
           <ServiceCard title="Content Chemistry Cohort" subtitle="Transform with a supportive group" description="7-week intensive program with weekly calls, personalized formulas, and lifetime community access." features={cohortFeatures} programDetails={{
           duration: "7 weeks + lifetime access",
           format: "Small group coaching"
-        }} icon={Users} delay={0.2} buttonText="Learn More" linkTo="/services/content-cohort" />
+        }} icon={Users} delay={0.2} buttonText="Apply for Cohort" linkTo="/services/content-cohort/apply" />
           
           <ServiceCard title="The Brand Catalyst" subtitle="Personalized 1:1 transformation" description="90 days of intensive 1:1 work with daily support to completely transform your content and brand." features={catalystFeatures} programDetails={{
           duration: "90 days + 6 months support",

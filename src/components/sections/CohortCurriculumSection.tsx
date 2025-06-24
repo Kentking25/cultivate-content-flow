@@ -1,7 +1,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Book, Target, Calendar, Video, Zap, Users, TrendingUp } from 'lucide-react';
+import { Book, Target, Calendar, Video, Zap, Users } from 'lucide-react';
 import { CheckCircle } from 'lucide-react';
 import { useRef } from 'react';
 
@@ -89,18 +89,6 @@ const CohortCurriculumSection = () => {
         "Build your conversion content library",
         "Track what actually drives revenue"
       ]
-    },
-    {
-      week: 7,
-      title: "Your Content Strategy Presentation",
-      description: "Present your personalized strategy to the group for feedback. Leave with a clear roadmap and accountability partners.",
-      icon: TrendingUp,
-      features: [
-        "Present your complete strategy",
-        "Get group feedback and refinement",
-        "Create accountability partnerships",
-        "Launch with confidence"
-      ]
     }
   ];
 
@@ -117,7 +105,7 @@ const CohortCurriculumSection = () => {
             Everything You Need to Stop Guessing and Start Converting
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Your complete 7-week content transformation journey
+            Your complete 6-week content transformation journey
           </p>
         </motion.div>
 
@@ -150,9 +138,7 @@ const CohortCurriculumSection = () => {
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center">
-                      <week.icon className="h-8 w-8 text-chemist-orange" />
-                    </div>
+                    <week.icon className="h-8 w-8 text-chemist-orange" />
                   </div>
                   
                   <div className="flex-grow">
