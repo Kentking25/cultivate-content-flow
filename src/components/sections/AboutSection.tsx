@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Users, BarChart3, Mic } from 'lucide-react';
+import { Mic, Award, Users } from 'lucide-react';
 import { FormulaDiagram } from '../ChemistryElements';
 
 const AboutSection = () => {
@@ -11,9 +11,9 @@ const AboutSection = () => {
   });
 
   const stats = [
-    { number: "1,247+", label: "Entrepreneurs Coached", icon: Users },
-    { number: "312%", label: "Avg. Engagement Increase", icon: BarChart3 },
-    { number: "50+", label: "Speaking Events", icon: Mic }
+    { number: "20+", label: "Podcast Appearances", sublabel: "Featured on 20+ top marketing podcasts", icon: Mic },
+    { number: "Award-winning", label: "Industry Recognition", sublabel: "Award-winning content strategies", icon: Award },
+    { number: "1,200+", label: "Community Access", sublabel: "Join 1,200+ content creators", icon: Users }
   ];
 
   return (
@@ -93,12 +93,13 @@ const AboutSection = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-              <div className="w-16 h-16 bg-chemist-orange bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div key={index} className="text-center p-6 bg-chemist-black rounded-lg shadow-sm">
+              <div className="w-16 h-16 bg-chemist-orange bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="h-8 w-8 text-chemist-orange" />
               </div>
-              <div className="text-3xl font-bold text-chemist-black mb-2">{stat.number}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-2xl font-bold text-white mb-2">{stat.number}</div>
+              <div className="text-white font-semibold mb-1">{stat.label}</div>
+              <div className="text-gray-400 text-sm">{stat.sublabel}</div>
             </div>
           ))}
         </motion.div>
