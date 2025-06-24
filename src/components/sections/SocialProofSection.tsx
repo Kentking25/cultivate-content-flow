@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Star, Quote } from 'lucide-react';
@@ -28,6 +27,41 @@ const SocialProofSection = () => {
       role: "Consultant",
       rating: 5,
     },
+  ];
+
+  const companyLogos = [
+    {
+      name: "Microsoft",
+      src: "/lovable-uploads/7f60bb71-e3a3-47fa-b30b-e332f26a7576.png"
+    },
+    {
+      name: "inBeat",
+      src: "/lovable-uploads/c1b6341e-39ef-426b-bea7-d871c648ee36.png"
+    },
+    {
+      name: "Trap Karaoke",
+      src: "/lovable-uploads/3cc7af20-7d24-459b-a96b-651476a30dc8.png"
+    },
+    {
+      name: "Printify",
+      src: "/lovable-uploads/827e4c22-1303-47e3-a708-c977115cfa44.png"
+    },
+    {
+      name: "Zeffy",
+      src: "/lovable-uploads/ffc94f8f-1147-4b7a-bf12-4c381c731718.png"
+    },
+    {
+      name: "Natulang",
+      src: "/lovable-uploads/45963ba7-b49d-4e3b-92c6-1c5b6060c07b.png"
+    },
+    {
+      name: "Profile Image",
+      src: "/lovable-uploads/2314f8a5-98c0-4eb6-afc7-9b023220d156.png"
+    },
+    {
+      name: "iTrust Capital",
+      src: "/lovable-uploads/85bce84f-e11f-4fc1-a123-0b4c657faf8e.png"
+    }
   ];
 
   return (
@@ -83,23 +117,26 @@ const SocialProofSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
               Trusted by Industry Leaders
             </h3>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">Featured On</span>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">Podcast Guest</span>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">Industry Expert</span>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100 w-full max-w-[200px] h-24 flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">Thought Leader</span>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              {companyLogos.map((logo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-md border border-gray-100 h-24 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name}
+                    className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
