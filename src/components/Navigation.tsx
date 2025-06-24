@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { cn } from '@/lib/utils';
@@ -39,8 +38,8 @@ const Navigation = () => {
     },
     { 
       name: 'Services', 
-      target: location.pathname === '/' ? 'services' : '/#services', 
-      isRouter: location.pathname !== '/' 
+      target: '/services', 
+      isRouter: true 
     }
   ];
 
