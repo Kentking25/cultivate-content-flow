@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users, TrendingUp, Check } from 'lucide-react';
@@ -78,10 +79,10 @@ const ContentOptionsSection = () => {
             </p>
             
             <Link 
-              to="/services/content-cohort/apply"
+              to="/services/content-cohort"
               className="w-full bg-chemist-orange hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:scale-[1.02] inline-block text-center"
             >
-              Apply for Cohort →
+              Learn More About Cohort →
             </Link>
           </motion.div>
 
@@ -117,10 +118,10 @@ const ContentOptionsSection = () => {
             </p>
             
             <Link 
-              to="/services/brand-catalyst/apply"
+              to="/services/brand-catalyst"
               className="w-full bg-gray-600 hover:bg-gray-500 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:scale-[1.02] inline-block text-center"
             >
-              Apply for Brand Catalyst →
+              Learn More About Brand Catalyst →
             </Link>
           </motion.div>
         </div>
