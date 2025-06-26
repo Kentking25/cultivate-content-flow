@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
@@ -20,6 +21,12 @@ const CohortHeroSection = () => {
       }} transition={{
         duration: 0.8
       }}>
+          <div className="mb-6">
+            <span className="inline-block bg-chemist-orange text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide">
+              Content Chemistry Cohort
+            </span>
+          </div>
+          
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Finally Know What to Post
           </h1>

@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Search, Users, TrendingUp, CheckCircle, Clock, MessageCircle } from 'lucide-react';
@@ -151,8 +152,8 @@ const ServicesOfferedSection = () => {
             }} 
             icon={Users} 
             delay={0.2} 
-            buttonText="Apply for Cohort" 
-            linkTo="/services/content-cohort/apply" 
+            buttonText="Learn More" 
+            linkTo="/services/content-cohort" 
           />
           
           <ServiceCard 
@@ -166,8 +167,8 @@ const ServicesOfferedSection = () => {
             }} 
             icon={TrendingUp} 
             delay={0.4} 
-            buttonText="Apply Now" 
-            linkTo="/services/brand-catalyst/apply" 
+            buttonText="Learn More" 
+            linkTo="/services/brand-catalyst" 
           />
         </div>
       </div>
