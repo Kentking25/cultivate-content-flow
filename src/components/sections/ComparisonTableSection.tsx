@@ -32,25 +32,28 @@ const ComparisonTableSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-6xl mx-auto"
         >
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 overflow-x-auto">
-            {/* Header */}
-            <div className="grid grid-cols-4 bg-gray-50 border-b border-gray-200 min-w-full">
-              <div className="p-4 md:p-6 font-bold text-gray-900 text-sm md:text-base min-w-[120px]">Features</div>
-              <div className="p-4 md:p-6 text-center border-l border-gray-200 min-w-[120px]">
-                <div className="font-bold text-gray-900 text-sm md:text-base">Free Assessment</div>
-                <div className="text-xs md:text-sm text-gray-600 mt-1">Quick Start</div>
+          {/* Mobile-first responsive table */}
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+            {/* Header - Mobile optimized */}
+            <div className="grid grid-cols-4 bg-gray-50 border-b border-gray-200">
+              <div className="p-2 md:p-4 font-bold text-gray-900 text-xs md:text-base">
+                <span className="block">Features</span>
               </div>
-              <div className="p-4 md:p-6 text-center border-l border-gray-200 min-w-[120px]">
-                <div className="font-bold text-gray-900 text-sm md:text-base">Cohort</div>
-                <div className="text-xs md:text-sm text-gray-600 mt-1">Group Program</div>
+              <div className="p-2 md:p-4 text-center border-l border-gray-200">
+                <div className="font-bold text-gray-900 text-xs md:text-base leading-tight">Free Assessment</div>
+                <div className="text-xs text-gray-600 mt-1 hidden md:block">Quick Start</div>
               </div>
-              <div className="p-4 md:p-6 text-center border-l border-gray-200 min-w-[120px]">
-                <div className="font-bold text-gray-900 text-sm md:text-base">Brand Catalyst</div>
-                <div className="text-xs md:text-sm text-gray-600 mt-1">1:1 Coaching</div>
+              <div className="p-2 md:p-4 text-center border-l border-gray-200">
+                <div className="font-bold text-gray-900 text-xs md:text-base leading-tight">Cohort</div>
+                <div className="text-xs text-gray-600 mt-1 hidden md:block">Group Program</div>
+              </div>
+              <div className="p-2 md:p-4 text-center border-l border-gray-200">
+                <div className="font-bold text-gray-900 text-xs md:text-base leading-tight">Brand Catalyst</div>
+                <div className="text-xs text-gray-600 mt-1 hidden md:block">1:1 Coaching</div>
               </div>
             </div>
 
-            {/* Rows */}
+            {/* Rows - Mobile optimized */}
             {[
               {
                 feature: "Personal Content Formula",
@@ -95,39 +98,47 @@ const ComparisonTableSection = () => {
                 catalyst: "Fast Results"
               }
             ].map((row, index) => (
-              <div key={index} className="grid grid-cols-4 border-b border-gray-100 last:border-b-0 min-w-full">
-                <div className="p-4 md:p-6 font-medium text-gray-900 text-sm md:text-base min-w-[120px]">{row.feature}</div>
-                <div className="p-4 md:p-6 text-center border-l border-gray-100 min-w-[120px]">
+              <div key={index} className="grid grid-cols-4 border-b border-gray-100 last:border-b-0">
+                <div className="p-2 md:p-4 font-medium text-gray-900 text-xs md:text-base leading-tight">
+                  {row.feature}
+                </div>
+                <div className="p-2 md:p-4 text-center border-l border-gray-100 flex items-center justify-center">
                   {typeof row.assessment === 'boolean' ? (
                     row.assessment ? (
-                      <Check className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" />
+                      <Check className="h-3 w-3 md:h-5 md:w-5 text-green-500" />
                     ) : (
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-gray-400 mx-auto" />
+                      <X className="h-3 w-3 md:h-5 md:w-5 text-gray-400" />
                     )
                   ) : (
-                    <span className="text-gray-700 text-xs md:text-sm break-words">{row.assessment}</span>
+                    <span className="text-gray-700 text-xs md:text-sm text-center leading-tight">
+                      {row.assessment}
+                    </span>
                   )}
                 </div>
-                <div className="p-4 md:p-6 text-center border-l border-gray-100 min-w-[120px]">
+                <div className="p-2 md:p-4 text-center border-l border-gray-100 flex items-center justify-center">
                   {typeof row.cohort === 'boolean' ? (
                     row.cohort ? (
-                      <Check className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" />
+                      <Check className="h-3 w-3 md:h-5 md:w-5 text-green-500" />
                     ) : (
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-gray-400 mx-auto" />
+                      <X className="h-3 w-3 md:h-5 md:w-5 text-gray-400" />
                     )
                   ) : (
-                    <span className="text-gray-700 text-xs md:text-sm break-words">{row.cohort}</span>
+                    <span className="text-gray-700 text-xs md:text-sm text-center leading-tight">
+                      {row.cohort}
+                    </span>
                   )}
                 </div>
-                <div className="p-4 md:p-6 text-center border-l border-gray-100 min-w-[120px]">
+                <div className="p-2 md:p-4 text-center border-l border-gray-100 flex items-center justify-center">
                   {typeof row.catalyst === 'boolean' ? (
                     row.catalyst ? (
-                      <Check className="h-4 w-4 md:h-5 md:w-5 text-green-500 mx-auto" />
+                      <Check className="h-3 w-3 md:h-5 md:w-5 text-green-500" />
                     ) : (
-                      <X className="h-4 w-4 md:h-5 md:w-5 text-gray-400 mx-auto" />
+                      <X className="h-3 w-3 md:h-5 md:w-5 text-gray-400" />
                     )
                   ) : (
-                    <span className="text-gray-700 text-xs md:text-sm break-words">{row.catalyst}</span>
+                    <span className="text-gray-700 text-xs md:text-sm text-center leading-tight">
+                      {row.catalyst}
+                    </span>
                   )}
                 </div>
               </div>
