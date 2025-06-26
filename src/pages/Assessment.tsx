@@ -10,7 +10,12 @@ import { CheckCircle } from 'lucide-react';
 import { useEffect } from 'react';
 
 const Assessment = () => {
-  const [ref, inView] = useInView({
+  const [heroRef, heroInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  const [formRef, formInView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
@@ -32,7 +37,9 @@ const Assessment = () => {
 
     return () => {
       // Cleanup script when component unmounts
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
@@ -44,11 +51,11 @@ const Assessment = () => {
       
       <div className="pt-20">
         {/* Assessment Hero Section */}
-        <section className="section bg-gray-50" ref={ref}>
+        <section className="section bg-gray-50" ref={heroRef}>
           <div className="container-content text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8 }}
               className="max-w-4xl mx-auto"
             >
@@ -74,7 +81,7 @@ const Assessment = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="text-center"
                 >
@@ -84,7 +91,7 @@ const Assessment = () => {
                 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-center"
                 >
@@ -94,7 +101,7 @@ const Assessment = () => {
                 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-center"
                 >
@@ -111,11 +118,11 @@ const Assessment = () => {
         </section>
 
         {/* Assessment Form Section */}
-        <section className="section bg-white">
+        <section className="section bg-white" ref={formRef}>
           <div className="container-content">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-2xl mx-auto bg-gray-50 rounded-2xl p-8 border border-gray-200 relative"
             >
