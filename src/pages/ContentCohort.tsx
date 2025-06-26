@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import ScrollProgress from '../components/ScrollProgress';
 import Footer from '../components/Footer';
@@ -10,17 +9,9 @@ import CohortTestimonialsSection from '../components/sections/CohortTestimonials
 import CohortCTASection from '../components/sections/CohortCTASection';
 import CohortFAQSection from '../components/sections/CohortFAQSection';
 import { CheckCircle } from 'lucide-react';
-
 const ContentCohort = () => {
-  const cohortBenefits = [
-    "Weekly group coaching calls",
-    "Your personal content formula",
-    "90-day content calendar",
-    "Lifetime community access"
-  ];
-
-  return (
-    <div className="bg-chemist-white min-h-screen">
+  const cohortBenefits = ["Weekly group coaching calls", "Your personal content formula", "90-day content calendar", "Lifetime community access"];
+  return <div className="bg-chemist-white min-h-screen">
       <ScrollProgress />
       <Navigation />
       <LabBackground />
@@ -48,20 +39,13 @@ const ContentCohort = () => {
                   </div>
 
                   <div className="space-y-3 mb-8 text-left max-w-sm mx-auto">
-                    {cohortBenefits.map((benefit, index) => (
-                      <div key={index} className="flex items-center gap-3">
+                    {cohortBenefits.map((benefit, index) => <div key={index} className="flex items-center gap-3">
                         <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
                         <span className="text-gray-700">{benefit}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
 
-                  <a 
-                    href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-chemist-orange text-white px-8 py-4 rounded-xl text-xl font-semibold hover:bg-opacity-90 transition-colors w-full inline-block"
-                  >
+                  <a href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6" target="_blank" rel="noopener noreferrer" className="bg-chemist-orange text-white px-8 py-4 rounded-xl text-xl font-semibold hover:bg-opacity-90 transition-colors w-full inline-block">
                     Apply for Your Spot →
                   </a>
                 </div>
@@ -78,7 +62,7 @@ const ContentCohort = () => {
               
               <div className="bg-white bg-opacity-20 rounded-xl p-8 max-w-md mx-auto mb-8">
                 <h3 className="text-2xl font-bold mb-4">Next Cohort Starts:</h3>
-                <div className="text-3xl font-bold mb-4">February 3rd</div>
+                <div className="text-3xl font-bold mb-4">August 3rd</div>
                 <div className="mb-2"><span className="font-semibold">Spots Remaining:</span> 4</div>
                 <div className="text-sm">Application Deadline: January 27th</div>
               </div>
@@ -97,8 +81,6 @@ const ContentCohort = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ContentCohort;

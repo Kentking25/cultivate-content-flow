@@ -1,22 +1,25 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-
 const CohortHeroSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1,
+    threshold: 0.1
   });
-
-  return (
-    <section className="bg-gradient-to-br from-orange-50 to-white py-20 lg:py-32" ref={ref}>
+  return <section className="bg-gradient-to-br from-orange-50 to-white py-20 lg:py-32" ref={ref}>
       <div className="container-content text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={inView ? {
+        opacity: 1,
+        y: 0
+      } : {
+        opacity: 0,
+        y: 30
+      }} transition={{
+        duration: 0.8
+      }}>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Finally Know What to Post
           </h1>
@@ -24,11 +27,7 @@ const CohortHeroSection = () => {
             (Without the Daily Guessing Game)
           </p>
           
-          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">
-            Join 8-10 coaches and course creators who are tired of posting into the void. Get your 
-            personal content formula in 7 weeks – no more staring at blank screens wondering 
-            "what should I say today?"
-          </p>
+          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">Join 8-10 entrepreneurs who are tired of posting into the void. Get your personal content formula in 7 weeks – no more staring at blank screens wondering "what should I say today?"</p>
           
           <div className="flex items-center justify-center gap-2 mb-12">
             <span className="text-chemist-orange text-2xl">⚡</span>
@@ -58,23 +57,14 @@ const CohortHeroSection = () => {
           </div>
 
           <div className="space-y-4">
-            <a
-              href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-xl px-8 py-4 inline-block"
-            >
+            <a href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6" target="_blank" rel="noopener noreferrer" className="btn-primary text-xl px-8 py-4 inline-block">
               Apply for Your Spot →
             </a>
             
-            <p className="text-gray-600">
-              Next cohort starts February 3rd • Only 4 spots remaining
-            </p>
+            <p className="text-gray-600">Next cohort starts August 3rd • Only 4 spots remaining</p>
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CohortHeroSection;
