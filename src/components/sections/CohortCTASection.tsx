@@ -56,7 +56,7 @@ const CohortCTASection = () => {
           
           <div className="space-y-4 mb-8">
             <a
-              href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6"
+              href="https://contentclinic.live"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-chemist-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 inline-block text-xl"

@@ -42,12 +42,14 @@ const ServicesCTASection = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-4">Join Others</h3>
               <p className="text-white/90 mb-6">Transform with a supportive cohort</p>
-              <Link
-                to="/services/content-cohort"
+              <a
+                href="https://contentclinic.live"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-chemist-orange px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 inline-block"
               >
                 Apply for Cohort
-              </Link>
+              </a>
             </div>
 
             {/* Go Deep */}

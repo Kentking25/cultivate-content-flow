@@ -153,7 +153,7 @@ const ServicesOfferedSection = () => {
             icon={Users} 
             delay={0.2} 
             buttonText="Learn More" 
-            linkTo="/services/content-cohort" 
+            linkTo="https://contentclinic.live" 
           />
           
           <ServiceCard 

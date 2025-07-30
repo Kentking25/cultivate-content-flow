@@ -78,12 +78,14 @@ const ContentOptionsSection = () => {
               Application required - pricing discussed during consultation
             </p>
             
-            <Link 
-              to="/services/content-cohort"
+            <a 
+              href="https://contentclinic.live"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full bg-chemist-orange hover:bg-opacity-90 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 hover:scale-[1.02] inline-block text-center"
             >
               Learn More About Cohort →
-            </Link>
+            </a>
           </motion.div>
 
           {/* The Brand Catalyst */}

@@ -64,7 +64,7 @@ const CohortHeroSection = () => {
           </div>
 
           <div className="space-y-4">
-            <a href="https://elementtheagency.hbportal.co/public/685b14d4594f9a001f716ba6" target="_blank" rel="noopener noreferrer" className="btn-primary text-xl px-8 py-4 inline-block">
+            <a href="https://contentclinic.live" target="_blank" rel="noopener noreferrer" className="btn-primary text-xl px-8 py-4 inline-block">
               Apply for Your Spot →
             </a>
             
