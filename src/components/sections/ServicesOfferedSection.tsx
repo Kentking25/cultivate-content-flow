@@ -144,10 +144,10 @@ const ServicesOfferedSection = () => {
           <ServiceCard 
             title="Content Chemistry Cohort" 
             subtitle="Transform with a supportive group" 
-            description="7-week intensive program with weekly calls, personalized formulas, and lifetime community access." 
+            description="6-week intensive program with weekly calls, personalized formulas, and lifetime community access." 
             features={cohortFeatures} 
             programDetails={{
-              duration: "7 weeks + lifetime access",
+              duration: "6 weeks + lifetime access",
               format: "Small group coaching"
             }} 
             icon={Users} 

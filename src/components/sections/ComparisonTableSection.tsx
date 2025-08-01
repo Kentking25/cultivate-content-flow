@@ -88,7 +88,7 @@ const ComparisonTableSection = () => {
               {
                 feature: "Implementation Timeline",
                 assessment: "Instant",
-                cohort: "7 weeks",
+                cohort: "6 weeks",
                 catalyst: "90 days"
               },
               {

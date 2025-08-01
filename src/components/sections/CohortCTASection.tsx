@@ -45,7 +45,7 @@ const CohortCTASection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Your Content Clarity Starts in 7 Weeks
+            Your Content Clarity Starts in 6 Weeks
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
             No more staring at blank screens. No more copying what everyone else is doing. No more posting and praying.

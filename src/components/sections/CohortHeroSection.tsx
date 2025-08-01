@@ -34,7 +34,7 @@ const CohortHeroSection = () => {
             (Without the Daily Guessing Game)
           </p>
           
-          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">Join 8-10 entrepreneurs who are tired of posting into the void. Get your personal content formula in 7 weeks – no more staring at blank screens wondering "what should I say today?"</p>
+          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">Join 8-10 entrepreneurs who are tired of posting into the void. Get your personal content formula in 6 weeks – no more staring at blank screens wondering "what should I say today?"</p>
           
           <div className="flex items-center justify-center gap-2 mb-12">
             <span className="text-chemist-orange text-2xl">⚡</span>
@@ -46,7 +46,7 @@ const CohortHeroSection = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
             <div className="text-center">
-              <div className="text-4xl font-bold text-chemist-orange mb-2">7</div>
+              <div className="text-4xl font-bold text-chemist-orange mb-2">6</div>
               <div className="text-gray-700 font-medium">Weeks</div>
             </div>
             <div className="text-center">
