@@ -105,12 +105,12 @@ const Footer = () => {
             </div>
             <div>
               <a 
-                href="https://elementtheagency.hbportal.co/public/674cde7cf3636d002dbc1d37" 
+                href="https://superprofile.bio/bookings/kentcultivate?sessionId=6896195904f931001305f3a3" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-chemist-orange hover:text-white transition-colors"
               >
-                Element The Agency →
+                Discovery Call →
               </a>
             </div>
           </div>
