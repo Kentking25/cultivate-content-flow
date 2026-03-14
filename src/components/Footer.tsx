@@ -56,7 +56,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/23d3a082-21ba-4964-94c6-d58b0f191609.png" 
                 alt="Kent King - Content Chemist Logo" 
-                className="h-12"
+                className="h-12 border border-white/30 rounded p-1"
               />
             </div>
             <p className="text-gray-400 mb-4 max-w-xs">
