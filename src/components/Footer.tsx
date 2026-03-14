@@ -56,7 +56,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/23d3a082-21ba-4964-94c6-d58b0f191609.png" 
                 alt="Kent King - Content Chemist Logo" 
-                className="h-12"
+                className="h-12 border border-white/30 rounded p-1"
               />
             </div>
             <p className="text-gray-400 mb-4 max-w-xs">
@@ -71,7 +71,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Kent</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors">Programs</Link></li>
-              <li><a href="https://successonsocial.co" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">SOS Club</a></li>
             </ul>
           </div>
           
