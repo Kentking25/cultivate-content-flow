@@ -13,8 +13,7 @@ const Footer = () => {
   const socialLinks = [
     { name: 'Twitter', url: 'https://x.com/kentcultivate', icon: Twitter },
     { name: 'Instagram', url: 'https://instagram.com/kentcultivate', icon: Instagram },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/kent-king-64164b1b9', icon: Linkedin },
-    { name: 'YouTube', url: 'https://youtube.com/@kentcultivate', icon: Youtube },
+    { name: 'YouTube', url: 'https://youtube.com/@kentcultivate?si=KF18JRVYy3pS6ipr', icon: Youtube },
   ];
 
   return (
