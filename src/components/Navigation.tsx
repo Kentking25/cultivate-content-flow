@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { cn } from '@/lib/utils';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,71 +10,59 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Nav items for hamburger menu
   const navItems = [
-    { 
-      name: 'Home', 
-      target: '/', 
-      isRouter: true 
-    },
-    { 
-      name: 'About', 
-      target: '/about', 
-      isRouter: true 
-    },
-    { 
-      name: 'Programs', 
-      target: '/services', 
-      isRouter: true 
-    }
+    { name: 'Services', target: '/#services' },
+    { name: 'Speaking', target: '/speaking' },
+    { name: 'Agency', target: '/agency' },
   ];
 
   return (
-    <nav 
+    <nav
       className={cn(
         'fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300',
-        scrolled 
-          ? 'py-3 bg-chemist-black bg-opacity-90 backdrop-blur-sm shadow-md' 
+        scrolled
+          ? 'py-3 bg-chemist-black/90 backdrop-blur-md border-b border-white/5'
           : 'py-5 bg-transparent'
       )}
     >
-      <div className="container-content flex justify-between items-center">
-        <div className="flex items-center">
-          <RouterLink to="/">
-            <img 
-              src="/lovable-uploads/23d3a082-21ba-4964-94c6-d58b0f191609.png" 
-              alt="Kent King - Content Chemist Logo" 
-              className="h-10 md:h-12"
-            />
-          </RouterLink>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+        {/* Logo */}
+        <RouterLink to="/" className="text-white font-bold text-xl tracking-tight">
+          Kent King
+        </RouterLink>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <RouterLink
+              key={item.name}
+              to={item.target}
+              className="text-white/60 hover:text-white text-sm font-medium transition-colors duration-300"
+            >
+              {item.name}
+            </RouterLink>
+          ))}
         </div>
-        
-        {/* Desktop Navigation - Now shows hamburger and Free Game Plan */}
+
+        {/* CTA + Hamburger */}
         <div className="flex items-center gap-4">
-          <RouterLink
-            to="/assessment"
-            className="btn-primary"
+          <a
+            href="https://superprofile.bio/bookings/kentcultivate?sessionId=6896195904f931001305f3a3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-chemist-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all duration-300"
           >
-            Free Game Plan
-          </RouterLink>
-          
-          {/* Hamburger Menu Button - Now visible on all screen sizes */}
+            Book 1:1 <ArrowRight className="w-3 h-3" />
+          </a>
+
           <button
-            className="text-white focus:outline-none z-50"
+            className="text-white focus:outline-none z-50 md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -91,33 +78,19 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Navigation Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-chemist-black shadow-md py-4 px-6 animate-fade-in z-40">
+        <div className="absolute top-full left-0 right-0 bg-chemist-black/95 backdrop-blur-md border-b border-white/5 py-6 px-6 animate-fade-in md:hidden">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              item.isRouter ? (
-                <RouterLink
-                  key={item.name}
-                  to={item.target}
-                  className="nav-item font-medium text-white hover:text-chemist-orange py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </RouterLink>
-              ) : (
-                <Link
-                  key={item.name}
-                  to={item.target}
-                  spy={true}
-                  smooth={true}
-                  duration={800}
-                  className="nav-item font-medium text-white hover:text-chemist-orange cursor-pointer py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              )
+              <RouterLink
+                key={item.name}
+                to={item.target}
+                className="text-white/60 hover:text-white font-medium py-2 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </RouterLink>
             ))}
           </div>
         </div>

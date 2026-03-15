@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Index from './pages/Index';
@@ -9,6 +8,8 @@ import Services from './pages/Services';
 import BrandCatalyst from './pages/BrandCatalyst';
 import Assessment from './pages/Assessment';
 import BrandCatalystApplication from './pages/BrandCatalystApplication';
+import Speaking from './pages/Speaking';
+import Agency from './pages/Agency';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/services/brand-catalyst" element={<BrandCatalyst />} />
           <Route path="/services/brand-catalyst/apply" element={<BrandCatalystApplication />} />
           <Route path="/assessment" element={<Assessment />} />
+          <Route path="/speaking" element={<Speaking />} />
+          <Route path="/agency" element={<Agency />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
